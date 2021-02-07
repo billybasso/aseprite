@@ -56,9 +56,26 @@
 #include <set>
 #include <vector>
 
+//BEGIN BBASSO MOD
+#include <unordered_map>
+#include "BeanTechAnimationFormat.h"
+//END BBASSO MOD
+
+
 #define DX_TRACE(...) // TRACEARGS
 
 using namespace doc;
+
+//BEGIN BBASSO MOD
+struct NumberedImage
+{
+   unsigned char index;
+   Image* image;
+};
+
+static std::set<NumberedImage> images;
+static unsigned char* imageIndices;//[numLayers][numFrames]
+//END BBASSO MOD
 
 namespace {
 
@@ -588,6 +605,9 @@ void DocExporter::reset()
   m_sheetType = SpriteSheetType::None;
   m_dataFormat = SpriteSheetDataFormat::Default;
   m_dataFilename.clear();
+  //BEGIN BBASSO MOD
+  m_btaFilename.clear();
+  //END BBASSO MOD
   m_textureFilename.clear();
   m_filenameFormat.clear();
   m_textureWidth = 0;
@@ -690,8 +710,42 @@ Doc* DocExporter::exportSheet(Context* ctx, base::task_token& token)
   token.set_progress(0.9f);
 
   // Save the metadata.
-  if (osbuf)
-    createDataFile(samples, os, texture);
+  if (osbuf) {
+     createDataFile(samples, os, texture);
+  }
+
+  //BEGIN BBASSO MOD
+  if (!m_btaFilename.empty() && ctx->isUIAvailable()) {
+
+    std::string dir = base::get_file_path(m_btaFilename);
+    try {
+       if (!base::is_directory(dir))
+          base::make_all_directories(dir);
+    }
+    catch (const std::exception& ex) {
+       Console console;
+       console.printf("Error creating directory \"%s\"\n%s",
+          dir.c_str(), ex.what());
+    }
+
+
+    void* data;
+    size_t size;
+    Doc* doc = ctx->activeDocument();
+    ASSERT(doc);
+    Sprite* sprite = samples[0].sprite();
+    createBTAFile(samples, sprite, &data, &size);
+    ASSERT(data);
+    FILE* file = fopen(m_btaFilename.c_str(), "wb");
+    ASSERT(file);
+    size_t bytesWritten = fwrite(data, size, 1, file);
+    ASSERT(bytesWritten == size);
+    fclose(file);
+    free(data);
+
+  }
+  //END BBASSO MOD
+
   token.set_progress(0.95f);
 
   // Save the image files.
@@ -1224,6 +1278,104 @@ void DocExporter::trimTexture(const Samples& samples,
   texture->setSize(m_textureWidth > 0 ? m_textureWidth: size.w,
                    m_textureHeight > 0 ? m_textureHeight: size.h);
 }
+
+//BEGIN BBASSO MOD
+void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprite, void** dataOut, size_t* sizeOut)
+{
+   using BTA = BT::BTAnimation;
+   ASSERT(sprite);
+   ASSERT(dataOut);
+   ASSERT(sizeOut);
+
+   std::vector<Image*> images;
+   sprite->getImages(images);
+
+   int numImages = images.size();
+   int numTags = sprite->tags().size();
+   int numLayers = sprite->allVisibleLayers().size();
+   int numFrames = sprite->totalFrames();
+   size_t totalSize = sizeof(BTA)
+                    + sizeof(BTA::Tag) * numTags
+                    + sizeof(BTA::ImageIndex) * numLayers * numFrames
+                    + sizeof(BTA::Image) * numImages;
+  *dataOut = malloc(totalSize);
+  *sizeOut = totalSize;
+
+  size_t tagsOffset = sizeof(BTA);
+  size_t imageIndicesOffset = tagsOffset + sizeof(BTA::Tag) * numTags;
+  size_t imagesOffset = imageIndicesOffset + sizeof(BTA::ImageIndex) * numLayers * numFrames;
+
+  BT::BTAnimation* anim = new(*dataOut)BT::BTAnimation;
+  anim->version = BT::BTAnimation::CURRENT_VERSION;
+  anim->magicNumber = 0xAC1D;
+  anim->numTags = numTags;
+  anim->numImages = numImages;
+  anim->numLayers = numLayers;
+  anim->numFrames = numFrames;
+  anim->images = (BTA::Image*)(((char*)*dataOut) + imagesOffset);
+  anim->tags = (BTA::Tag*)(((char*)*dataOut) + tagsOffset);
+  anim->cels = (BTA::ImageIndex*)(((char*)*dataOut) + imageIndicesOffset);
+  //copy the tags
+  int i = 0;
+  for (auto tag : sprite->tags())
+  {
+     anim->tags[i].direction = (BTA::EAnimationDirection)tag->aniDir();
+     anim->tags[i].from = tag->fromFrame();
+     anim->tags[i].to = tag->toFrame();
+     strcpy_s(anim->tags[i].name, BTA::Tag::MAX_TAG_NAME_LENGTH, tag->name().c_str());
+     ++i;
+  }
+
+  //write out the image list
+  {
+     std::unordered_map<Image*, int> imageIndexMap;
+     for (int i = 0; i < images.size(); ++i)
+     {
+        imageIndexMap[images[i]] = i;
+     }
+     std::unordered_map<Layer*, int> layerIndexMap;
+     for (int i = 0; i < sprite->allLayersCount(); ++i)
+     {
+        layerIndexMap[sprite->allLayers()[i]] = i;
+     }
+     doc::LayerList layers = sprite->allLayers();
+     for (const Sample& sample : samples)
+     {
+        if (sample.isLinked() && sample.isDuplicated())
+        {
+           continue;
+        }
+
+
+        int layerIndex = layerIndexMap[sample.layer()];
+        Layer* layer = layers[layerIndex];
+        doc::Cel* cel = layer->cel(sample.frame());
+        int imageIndex = imageIndexMap[cel->image()];
+        BTA::Image& image = anim->images[imageIndex];
+        image.u = sample.inTextureBounds().x;
+        image.v = sample.inTextureBounds().y;
+        image.x = sample.trimmedBounds().x;
+        image.y = sample.trimmedBounds().y;
+        image.w = sample.inTextureBounds().w;
+        image.h = sample.inTextureBounds().h;
+     }
+
+     //write out the cel grid
+     for (int layerIndex = 0; layerIndex < numLayers; ++layerIndex)
+     {
+        for (int frameIndex = 0; frameIndex < numFrames; ++frameIndex)
+        {
+           Layer* layer = layers[layerIndex];
+           doc::Cel* cel = layer->cel(frameIndex);
+           int imageIndex = imageIndexMap[cel->image()];
+
+           int index = frameIndex * numLayers + layerIndex;
+           anim->cels[index] = imageIndex;
+        }
+     }
+  }
+}
+//END BBASSO MOD
 
 void DocExporter::createDataFile(const Samples& samples,
                                  std::ostream& os,

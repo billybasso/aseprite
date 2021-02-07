@@ -469,20 +469,23 @@
     </section>
     <section id="sprite_sheet">
       <option id="defined" type="bool" default="false" />
-      <option id="type" type="app::SpriteSheetType" default="app::SpriteSheetType::None" />
+      <option id="type" type="app::SpriteSheetType" default="app::SpriteSheetType::Packed" />
       <option id="columns" type="int" default="0" />
       <option id="rows" type="int" default="0" />
       <option id="width" type="int" default="0" />
       <option id="height" type="int" default="0" />
       <option id="texture_filename" type="std::string" />
       <option id="data_filename" type="std::string" />
+      <!--BEGIN BBASSO MOD-->
+      <option id="bta_filename" type="std::string" />
+      <!--END BBASSO MOD-->
       <option id="data_format" type="SpriteSheetDataFormat" default="SpriteSheetDataFormat::Default" />
       <option id="filename_format" type="std::string" />
       <option id="border_padding" type="int" default="0" />
       <option id="shape_padding" type="int" default="0" />
       <option id="inner_padding" type="int" default="0" />
       <option id="trim_sprite" type="bool" default="false" />
-      <option id="trim" type="bool" default="false" />
+      <option id="trim" type="bool" default="true" />
       <option id="trim_by_grid" type="bool" default="false" />
       <option id="extrude" type="bool" default="false" />
       <option id="merge_duplicates" type="bool" default="false" />

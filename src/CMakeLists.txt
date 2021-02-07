@@ -82,6 +82,11 @@ set(OBSERVABLE_TESTS OFF CACHE BOOL "Compile observable tests")
 add_subdirectory(observable)
 include_directories(observable)
 
+
+# BEGIN BBASSO MOD
+include_directories(${BEANTECH_SOURCE_DIR})
+# END BBASSO MOD
+
 # Disable clip examples and tests
 set(CLIP_EXAMPLES OFF CACHE BOOL "Compile clip examples")
 set(CLIP_TESTS OFF CACHE BOOL "Compile clip tests")

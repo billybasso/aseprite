@@ -1,0 +1,2737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\desktop\win\exports.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\src\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\app\active_site_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\app_brushes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\app_menus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\check_update.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\app_options.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\cli_open_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\cli_processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\cli_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\default_cli_delegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\filter_layer_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cli\preview_cli_delegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\closed_docs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\add_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\assign_color_profile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\background_from_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\clear_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\clear_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\clear_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\clear_rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\configure_background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\convert_color_profile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\copy_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\copy_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\copy_rect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\copy_region.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\crop_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\deselect_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\flatten_layers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\flip_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\flip_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\flip_masked_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\layer_from_background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\move_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\move_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\patch_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remap_colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\remove_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\replace_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\reselect_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_cel_bounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_cel_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_cel_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_cel_opacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_cel_position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_frame_duration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_grid_bounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_last_point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_layer_blend_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_layer_flags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_layer_name.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_layer_opacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_mask_position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_pixel_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_pixel_ratio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_slice_key.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_slice_name.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_sprite_size.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_tag_anidir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_tag_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_tag_name.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_tag_range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_total_frames.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_transparent_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\set_user_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\shift_masked_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\trim_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\unlink_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd\with_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd_sequence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\cmd_transaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\color_picker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\color_spaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\color_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\color_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_about.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_add_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_advanced_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_background_from_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_cancel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_canvas_size.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_cel_opacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_cel_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_change_brush.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_change_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_change_pixel_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_clear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_clear_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_clear_recent_files.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_close_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_color_quantization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_contiguous_fill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_copy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_copy_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_copy_merged.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_crop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_cut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_deselect_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_developer_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_discard_brush.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_duplicate_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_duplicate_sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_duplicate_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_exit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_export_sprite_sheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_eyedropper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_fill_and_stroke.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_fit_screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_flatten_layers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_flip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_frame_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_frame_tag_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_fullscreen_preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_goto_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_goto_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_goto_tab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_home.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_import_sprite_sheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_invert_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_keyboard_shortcuts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_launch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_layer_from_background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_layer_lock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_layer_opacity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_layer_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_layer_visibility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_link_cels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_load_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_load_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_mask_all.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_mask_by_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_mask_content.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_merge_down_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_modify_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_move_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_move_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_brush.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_frame_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_new_sprite_from_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_onionskin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_browser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_group.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_in_folder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_script_folder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_open_with_app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_options.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_palette_editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_palette_size.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_paste.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_paste_text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_pixel_perfect_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_play_animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_refresh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_remove_frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_remove_frame_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_remove_layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_remove_slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_reopen_closed_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_repeat_last_export.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_reselect_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_reverse_frames.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_rotate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_run_script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_save_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_save_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_save_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_scroll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_scroll_center.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_select_tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_color_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_ink_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_loop_section.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_palette_entry_size.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_set_same_ink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_show.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_slice_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_sprite_properties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_sprite_size.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_swap_checkerboard_colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_switch_colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_symmetry_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_tiled_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_timeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_toggle_preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_toggle_timeline_thumbnails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_undo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_undo_history.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_unlink_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\cmd_zoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\commands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_brightness_contrast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_color_curve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_convolution_matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_despeckle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_hue_saturation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_invert_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_outline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\cmd_replace_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\color_curve_editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\convolution_matrix_stock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\filter_manager_impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\filter_preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\filter_target_buttons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\filter_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\filters\filter_worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\move_colors_command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\move_thing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\new_params.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\quick_command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\commands\screenshot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\context.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\context_flags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\context_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\crash\backup_observer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\crash\data_recovery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\crash\read_document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\crash\session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\crash\write_document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\docs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_api_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_diff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_exporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_range_ops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_range_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\doc_undo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\errno_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\extensions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\extra_cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\filename_formatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\filename_formatter_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\ase_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\bmp_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file_formats_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file_op_config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\file_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\fli_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\gif_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\ico_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\jpeg_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\palette_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\pcx_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\png_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\split_filename.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\split_filename_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\svg_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\tga_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file\webp_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\file_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\flatten.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\font_path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\font_path_unix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\font_path_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\gui_xml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\i18n\strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\i18n\xml_translator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ini_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ini_file_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\job.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\launcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\load_matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\loop_tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\modules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\modules\editors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\modules\gfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\modules\gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\modules\palettes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\pref\preferences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\recent_files.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\resource_finder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\restore_visible_layers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\res\http_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\res\palettes_loader_delegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\res\resources_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\app_command_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\app_fs_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\app_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\brush_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\cels_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\cel_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\color_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\color_space_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\dialog_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\frames_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\frame_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\images_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\image_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\image_iterator_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\image_spec_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\layers_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\layer_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\luacpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\palettes_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\palette_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\pixel_color_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\plugin_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\point_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\preferences_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\range_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\rectangle_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\security.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\selection_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\site_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\size_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\slices_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\slice_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\sprites_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\sprite_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\tags_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\tag_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\tool_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\values.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\script\version_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\send_crash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\shade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\shell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\site.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\snap_to_grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\sprite_job.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\thumbnails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\thumbnail_generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\active_tool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\ink_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\intertwine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\pick_ink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\point_shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\stroke.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\symmetries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\tool_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\tool_loop_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\tools\velocity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\transaction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\transformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\app_menuitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\backup_indicator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\browser_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\brush_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\button_set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_shades.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_sliders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_spectrum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_tint_shade_tone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\color_wheel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\configure_timeline_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\context_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\data_recovery_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\devconsole_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\dithering_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\doc_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\drop_down_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\dynamics_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\brush_preview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\drawing_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\editor_observers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\editor_render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\editor_states_history.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\editor_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\moving_cel_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\moving_pixels_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\moving_selection_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\moving_slice_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\moving_symmetry_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\navigate_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\pivot_helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\pixels_movement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\play_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\scrolling_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\select_box_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\standby_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\state_with_wheel_behavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\tool_loop_impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\transform_handles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\editor\zooming_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\export_file_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\expr_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\filename_field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\file_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\file_list_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\file_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\font_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\hex_color_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\home_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\icon_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\input_chain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\keyboard_shortcuts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\layer_frame_comboboxes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\main_menu_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\main_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\news_listbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\notifications.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\optional_alert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\palettes_listbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\palette_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\palette_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\popup_window_pin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\pref_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\preview_editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\recent_listbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\resources_listbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\search_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\selection_mode_field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\select_accelerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\skin\font_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\skin\skin_part.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\skin\skin_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\skin\skin_slider_property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\skin\skin_theme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\slice_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\slider2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\status_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\tabs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\tag_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\task_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\timeline\ani_controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\timeline\timeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\toolbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\user_data_popup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\workspace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\workspace_panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\workspace_tabs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui\zoom_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\ui_context.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\autocrop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\buffer_region.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\clipboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\clipboard_native.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\conversion_to_surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\create_cel_copy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\expand_cel_canvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\filetoks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\freetype_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\layer_boundaries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\layer_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\msk_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\new_image_from_mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\pal_ops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\pic_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\pixel_ratio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\range_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\readable_time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\resize_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\util\wrap_point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\widget_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\xml_document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\app\xml_exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cfg\cfg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\clip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\clip_none.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\clip_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\clip_x11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\copy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\helloworld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\int_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\paste.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\put_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\examples\show_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\tests\image_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\tests\text_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\clip\tests\user_format_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\desktop\linux\kde\aseprite_thumb_creator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\desktop\win\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\desktop\win\thumbnail_handler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dio\aseprite_decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dio\decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dio\decode_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dio\detect_format.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dio\stdio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\fill_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\flip_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\floodfill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\modify_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\polygon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\polygon_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\resize_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\rotate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\rotsprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\shift_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\shrink_benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\shrink_bounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\algorithm\stroke_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\anidir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\blend_benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\blend_funcs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\blend_mode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\brush.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\brush_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\cel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\cels_range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\cel_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\cel_data_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\cel_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\compressed_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\document.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\file\act_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\file\col_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\file\gpl_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\file\hex_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\file\pal_file.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\handle_anidir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\image_impl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\image_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\image_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\keyframes_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\layer_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\layer_list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\layer_list_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\mask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\mask_boundaries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\mask_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\palette_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\primitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\remap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\remap_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\resize_image_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\rgbmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\selected_frames.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\selected_frames_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\selected_layers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\slice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\slices.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\slice_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\sort_palette.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\sprites.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\sprite_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\string_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\subobjects_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\tag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\tags.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\tag_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\doc\user_data_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\brightness_contrast_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\color_curve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\color_curve_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\convolution_matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\convolution_matrix_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\hue_saturation_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\invert_color_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\median_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\outline_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\filters\replace_color_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fixmath\fixmath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\flic\decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\flic\encoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\flic\stdio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\check_strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\gen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\pref_types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\strings_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\theme_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gen\ui_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\net\http_headers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\net\http_request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\net\http_response.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\benchmarks\obs_benchmarks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\obs\connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\count_signals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\disconnect_on_dtor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\disconnect_on_rescursive_signal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\disconnect_on_signal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\multithread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\multithread_futures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\observers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\reconnect_on_notification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\reconnect_on_signal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\observable\tests\signals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\error_diffusion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\get_sprite_pixel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\gradient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\ordered_dither.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\ordered_dither_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\quantization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\render_benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\render_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\render\zoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\steam\steam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tga\decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tga\encoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tga\image_iterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tga\stdio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\accelerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\accelerator_ui_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\alert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\combobox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\cursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\fit_bounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\graphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\grid_ui_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\image_view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\intern.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\int_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\link_label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\listbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\listitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\message_loop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\move_region.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\overlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\overlay_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\paint_event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\panel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\popup_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\property.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\register_message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\resize_event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\scroll_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\scroll_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\separator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\size_hint_event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\splitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\style.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\textbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\theme.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\tooltips.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\viewport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ui\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\undo\tests\basics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\undo\tests\complex_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\undo\tests\tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\undo\undo_history.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\updater\check_update.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\updater\user_agent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\updater\user_agent_win.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ver\info.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\app\active_site_handler.h" />
+    <ClInclude Include="..\src\app\app.h" />
+    <ClInclude Include="..\src\app\app_brushes.h" />
+    <ClInclude Include="..\src\app\app_menus.h" />
+    <ClInclude Include="..\src\app\app_mod.h" />
+    <ClInclude Include="..\src\app\brush_slot.h" />
+    <ClInclude Include="..\src\app\check_update.h" />
+    <ClInclude Include="..\src\app\check_update_delegate.h" />
+    <ClInclude Include="..\src\app\cli\app_options.h" />
+    <ClInclude Include="..\src\app\cli\cli_delegate.h" />
+    <ClInclude Include="..\src\app\cli\cli_open_file.h" />
+    <ClInclude Include="..\src\app\cli\cli_processor.h" />
+    <ClInclude Include="..\src\app\cli\default_cli_delegate.h" />
+    <ClInclude Include="..\src\app\cli\preview_cli_delegate.h" />
+    <ClInclude Include="..\src\app\closed_docs.h" />
+    <ClInclude Include="..\src\app\cmd.h" />
+    <ClInclude Include="..\src\app\cmd\add_cel.h" />
+    <ClInclude Include="..\src\app\cmd\add_frame.h" />
+    <ClInclude Include="..\src\app\cmd\add_layer.h" />
+    <ClInclude Include="..\src\app\cmd\add_palette.h" />
+    <ClInclude Include="..\src\app\cmd\add_slice.h" />
+    <ClInclude Include="..\src\app\cmd\add_tag.h" />
+    <ClInclude Include="..\src\app\cmd\assign_color_profile.h" />
+    <ClInclude Include="..\src\app\cmd\background_from_layer.h" />
+    <ClInclude Include="..\src\app\cmd\clear_cel.h" />
+    <ClInclude Include="..\src\app\cmd\clear_image.h" />
+    <ClInclude Include="..\src\app\cmd\clear_mask.h" />
+    <ClInclude Include="..\src\app\cmd\clear_rect.h" />
+    <ClInclude Include="..\src\app\cmd\configure_background.h" />
+    <ClInclude Include="..\src\app\cmd\convert_color_profile.h" />
+    <ClInclude Include="..\src\app\cmd\copy_cel.h" />
+    <ClInclude Include="..\src\app\cmd\copy_frame.h" />
+    <ClInclude Include="..\src\app\cmd\copy_rect.h" />
+    <ClInclude Include="..\src\app\cmd\copy_region.h" />
+    <ClInclude Include="..\src\app\cmd\crop_cel.h" />
+    <ClInclude Include="..\src\app\cmd\deselect_mask.h" />
+    <ClInclude Include="..\src\app\cmd\flatten_layers.h" />
+    <ClInclude Include="..\src\app\cmd\flip_image.h" />
+    <ClInclude Include="..\src\app\cmd\flip_mask.h" />
+    <ClInclude Include="..\src\app\cmd\flip_masked_cel.h" />
+    <ClInclude Include="..\src\app\cmd\layer_from_background.h" />
+    <ClInclude Include="..\src\app\cmd\move_cel.h" />
+    <ClInclude Include="..\src\app\cmd\move_layer.h" />
+    <ClInclude Include="..\src\app\cmd\patch_cel.h" />
+    <ClInclude Include="..\src\app\cmd\remap_colors.h" />
+    <ClInclude Include="..\src\app\cmd\remove_cel.h" />
+    <ClInclude Include="..\src\app\cmd\remove_frame.h" />
+    <ClInclude Include="..\src\app\cmd\remove_layer.h" />
+    <ClInclude Include="..\src\app\cmd\remove_palette.h" />
+    <ClInclude Include="..\src\app\cmd\remove_slice.h" />
+    <ClInclude Include="..\src\app\cmd\remove_tag.h" />
+    <ClInclude Include="..\src\app\cmd\replace_image.h" />
+    <ClInclude Include="..\src\app\cmd\reselect_mask.h" />
+    <ClInclude Include="..\src\app\cmd\set_cel_bounds.h" />
+    <ClInclude Include="..\src\app\cmd\set_cel_data.h" />
+    <ClInclude Include="..\src\app\cmd\set_cel_frame.h" />
+    <ClInclude Include="..\src\app\cmd\set_cel_opacity.h" />
+    <ClInclude Include="..\src\app\cmd\set_cel_position.h" />
+    <ClInclude Include="..\src\app\cmd\set_frame_duration.h" />
+    <ClInclude Include="..\src\app\cmd\set_grid_bounds.h" />
+    <ClInclude Include="..\src\app\cmd\set_last_point.h" />
+    <ClInclude Include="..\src\app\cmd\set_layer_blend_mode.h" />
+    <ClInclude Include="..\src\app\cmd\set_layer_flags.h" />
+    <ClInclude Include="..\src\app\cmd\set_layer_name.h" />
+    <ClInclude Include="..\src\app\cmd\set_layer_opacity.h" />
+    <ClInclude Include="..\src\app\cmd\set_mask.h" />
+    <ClInclude Include="..\src\app\cmd\set_mask_position.h" />
+    <ClInclude Include="..\src\app\cmd\set_palette.h" />
+    <ClInclude Include="..\src\app\cmd\set_pixel_format.h" />
+    <ClInclude Include="..\src\app\cmd\set_pixel_ratio.h" />
+    <ClInclude Include="..\src\app\cmd\set_slice_key.h" />
+    <ClInclude Include="..\src\app\cmd\set_slice_name.h" />
+    <ClInclude Include="..\src\app\cmd\set_sprite_size.h" />
+    <ClInclude Include="..\src\app\cmd\set_tag_anidir.h" />
+    <ClInclude Include="..\src\app\cmd\set_tag_color.h" />
+    <ClInclude Include="..\src\app\cmd\set_tag_name.h" />
+    <ClInclude Include="..\src\app\cmd\set_tag_range.h" />
+    <ClInclude Include="..\src\app\cmd\set_total_frames.h" />
+    <ClInclude Include="..\src\app\cmd\set_transparent_color.h" />
+    <ClInclude Include="..\src\app\cmd\set_user_data.h" />
+    <ClInclude Include="..\src\app\cmd\shift_masked_cel.h" />
+    <ClInclude Include="..\src\app\cmd\trim_cel.h" />
+    <ClInclude Include="..\src\app\cmd\unlink_cel.h" />
+    <ClInclude Include="..\src\app\cmd\with_cel.h" />
+    <ClInclude Include="..\src\app\cmd\with_document.h" />
+    <ClInclude Include="..\src\app\cmd\with_image.h" />
+    <ClInclude Include="..\src\app\cmd\with_layer.h" />
+    <ClInclude Include="..\src\app\cmd\with_slice.h" />
+    <ClInclude Include="..\src\app\cmd\with_sprite.h" />
+    <ClInclude Include="..\src\app\cmd\with_tag.h" />
+    <ClInclude Include="..\src\app\cmd_sequence.h" />
+    <ClInclude Include="..\src\app\cmd_transaction.h" />
+    <ClInclude Include="..\src\app\color.h" />
+    <ClInclude Include="..\src\app\color_picker.h" />
+    <ClInclude Include="..\src\app\color_spaces.h" />
+    <ClInclude Include="..\src\app\color_target.h" />
+    <ClInclude Include="..\src\app\color_utils.h" />
+    <ClInclude Include="..\src\app\commands\cmd_eyedropper.h" />
+    <ClInclude Include="..\src\app\commands\cmd_flip.h" />
+    <ClInclude Include="..\src\app\commands\cmd_move_mask.h" />
+    <ClInclude Include="..\src\app\commands\cmd_open_file.h" />
+    <ClInclude Include="..\src\app\commands\cmd_rotate.h" />
+    <ClInclude Include="..\src\app\commands\cmd_save_file.h" />
+    <ClInclude Include="..\src\app\commands\cmd_set_palette.h" />
+    <ClInclude Include="..\src\app\commands\command.h" />
+    <ClInclude Include="..\src\app\commands\commands.h" />
+    <ClInclude Include="..\src\app\commands\commands_list.h" />
+    <ClInclude Include="..\src\app\commands\command_factory.h" />
+    <ClInclude Include="..\src\app\commands\command_ids.h" />
+    <ClInclude Include="..\src\app\commands\filters\cels_target.h" />
+    <ClInclude Include="..\src\app\commands\filters\color_curve_editor.h" />
+    <ClInclude Include="..\src\app\commands\filters\convolution_matrix_stock.h" />
+    <ClInclude Include="..\src\app\commands\filters\filter_manager_impl.h" />
+    <ClInclude Include="..\src\app\commands\filters\filter_preview.h" />
+    <ClInclude Include="..\src\app\commands\filters\filter_target_buttons.h" />
+    <ClInclude Include="..\src\app\commands\filters\filter_window.h" />
+    <ClInclude Include="..\src\app\commands\filters\filter_worker.h" />
+    <ClInclude Include="..\src\app\commands\move_thing.h" />
+    <ClInclude Include="..\src\app\commands\new_params.h" />
+    <ClInclude Include="..\src\app\commands\params.h" />
+    <ClInclude Include="..\src\app\commands\quick_command.h" />
+    <ClInclude Include="..\src\app\console.h" />
+    <ClInclude Include="..\src\app\context.h" />
+    <ClInclude Include="..\src\app\context_access.h" />
+    <ClInclude Include="..\src\app\context_flags.h" />
+    <ClInclude Include="..\src\app\context_observer.h" />
+    <ClInclude Include="..\src\app\crash\backup_observer.h" />
+    <ClInclude Include="..\src\app\crash\data_recovery.h" />
+    <ClInclude Include="..\src\app\crash\internals.h" />
+    <ClInclude Include="..\src\app\crash\raw_images_as.h" />
+    <ClInclude Include="..\src\app\crash\read_document.h" />
+    <ClInclude Include="..\src\app\crash\recovery_config.h" />
+    <ClInclude Include="..\src\app\crash\session.h" />
+    <ClInclude Include="..\src\app\crash\write_document.h" />
+    <ClInclude Include="..\src\app\doc.h" />
+    <ClInclude Include="..\src\app\docs.h" />
+    <ClInclude Include="..\src\app\docs_observer.h" />
+    <ClInclude Include="..\src\app\doc_access.h" />
+    <ClInclude Include="..\src\app\doc_api.h" />
+    <ClInclude Include="..\src\app\doc_diff.h" />
+    <ClInclude Include="..\src\app\doc_event.h" />
+    <ClInclude Include="..\src\app\doc_exporter.h" />
+    <ClInclude Include="..\src\app\doc_observer.h" />
+    <ClInclude Include="..\src\app\doc_range.h" />
+    <ClInclude Include="..\src\app\doc_range_ops.h" />
+    <ClInclude Include="..\src\app\doc_undo.h" />
+    <ClInclude Include="..\src\app\doc_undo_observer.h" />
+    <ClInclude Include="..\src\app\drop_frame_place.h" />
+    <ClInclude Include="..\src\app\extensions.h" />
+    <ClInclude Include="..\src\app\extra_cel.h" />
+    <ClInclude Include="..\src\app\filename_formatter.h" />
+    <ClInclude Include="..\src\app\file\file.h" />
+    <ClInclude Include="..\src\app\file\file_data.h" />
+    <ClInclude Include="..\src\app\file\file_format.h" />
+    <ClInclude Include="..\src\app\file\file_formats_manager.h" />
+    <ClInclude Include="..\src\app\file\file_op_config.h" />
+    <ClInclude Include="..\src\app\file\format_options.h" />
+    <ClInclude Include="..\src\app\file\gif_format.h" />
+    <ClInclude Include="..\src\app\file\gif_options.h" />
+    <ClInclude Include="..\src\app\file\palette_file.h" />
+    <ClInclude Include="..\src\app\file\png_format.h" />
+    <ClInclude Include="..\src\app\file\png_options.h" />
+    <ClInclude Include="..\src\app\file\split_filename.h" />
+    <ClInclude Include="..\src\app\file\tga_options.h" />
+    <ClInclude Include="..\src\app\file\webp_options.h" />
+    <ClInclude Include="..\src\app\file_selector.h" />
+    <ClInclude Include="..\src\app\file_system.h" />
+    <ClInclude Include="..\src\app\find_widget.h" />
+    <ClInclude Include="..\src\app\flatten.h" />
+    <ClInclude Include="..\src\app\font_path.h" />
+    <ClInclude Include="..\src\app\gui_xml.h" />
+    <ClInclude Include="..\src\app\i18n\strings.h" />
+    <ClInclude Include="..\src\app\i18n\xml_translator.h" />
+    <ClInclude Include="..\src\app\ini_file.h" />
+    <ClInclude Include="..\src\app\job.h" />
+    <ClInclude Include="..\src\app\launcher.h" />
+    <ClInclude Include="..\src\app\load_matrix.h" />
+    <ClInclude Include="..\src\app\load_widget.h" />
+    <ClInclude Include="..\src\app\log.h" />
+    <ClInclude Include="..\src\app\loop_tag.h" />
+    <ClInclude Include="..\src\app\match_words.h" />
+    <ClInclude Include="..\src\app\modules.h" />
+    <ClInclude Include="..\src\app\modules\editors.h" />
+    <ClInclude Include="..\src\app\modules\gfx.h" />
+    <ClInclude Include="..\src\app\modules\gui.h" />
+    <ClInclude Include="..\src\app\modules\palettes.h" />
+    <ClInclude Include="..\src\app\notification_delegate.h" />
+    <ClInclude Include="..\src\app\pref\option.h" />
+    <ClInclude Include="..\src\app\pref\option_io.h" />
+    <ClInclude Include="..\src\app\pref\preferences.h" />
+    <ClInclude Include="..\src\app\recent_files.h" />
+    <ClInclude Include="..\src\app\resource_finder.h" />
+    <ClInclude Include="..\src\app\restore_visible_layers.h" />
+    <ClInclude Include="..\src\app\res\http_loader.h" />
+    <ClInclude Include="..\src\app\res\palettes_loader_delegate.h" />
+    <ClInclude Include="..\src\app\res\palette_resource.h" />
+    <ClInclude Include="..\src\app\res\resource.h" />
+    <ClInclude Include="..\src\app\res\resources_loader.h" />
+    <ClInclude Include="..\src\app\res\resources_loader_delegate.h" />
+    <ClInclude Include="..\src\app\script\api_version.h" />
+    <ClInclude Include="..\src\app\script\docobj.h" />
+    <ClInclude Include="..\src\app\script\engine.h" />
+    <ClInclude Include="..\src\app\script\luacpp.h" />
+    <ClInclude Include="..\src\app\script\security.h" />
+    <ClInclude Include="..\src\app\script\userdata.h" />
+    <ClInclude Include="..\src\app\script\values.h" />
+    <ClInclude Include="..\src\app\send_crash.h" />
+    <ClInclude Include="..\src\app\shade.h" />
+    <ClInclude Include="..\src\app\shell.h" />
+    <ClInclude Include="..\src\app\site.h" />
+    <ClInclude Include="..\src\app\snap_to_grid.h" />
+    <ClInclude Include="..\src\app\sprite_job.h" />
+    <ClInclude Include="..\src\app\sprite_position.h" />
+    <ClInclude Include="..\src\app\sprite_sheet_data_format.h" />
+    <ClInclude Include="..\src\app\sprite_sheet_type.h" />
+    <ClInclude Include="..\src\app\tags_handling.h" />
+    <ClInclude Include="..\src\app\task.h" />
+    <ClInclude Include="..\src\app\test_context.h" />
+    <ClInclude Include="..\src\app\thumbnails.h" />
+    <ClInclude Include="..\src\app\thumbnail_generator.h" />
+    <ClInclude Include="..\src\app\tools\active_tool.h" />
+    <ClInclude Include="..\src\app\tools\active_tool_observer.h" />
+    <ClInclude Include="..\src\app\tools\controller.h" />
+    <ClInclude Include="..\src\app\tools\controllers.h" />
+    <ClInclude Include="..\src\app\tools\dynamics.h" />
+    <ClInclude Include="..\src\app\tools\fill.h" />
+    <ClInclude Include="..\src\app\tools\freehand_algorithm.h" />
+    <ClInclude Include="..\src\app\tools\ink.h" />
+    <ClInclude Include="..\src\app\tools\inks.h" />
+    <ClInclude Include="..\src\app\tools\ink_processing.h" />
+    <ClInclude Include="..\src\app\tools\ink_type.h" />
+    <ClInclude Include="..\src\app\tools\intertwine.h" />
+    <ClInclude Include="..\src\app\tools\intertwiners.h" />
+    <ClInclude Include="..\src\app\tools\pick_ink.h" />
+    <ClInclude Include="..\src\app\tools\pointer.h" />
+    <ClInclude Include="..\src\app\tools\point_shape.h" />
+    <ClInclude Include="..\src\app\tools\point_shapes.h" />
+    <ClInclude Include="..\src\app\tools\rotation_algorithm.h" />
+    <ClInclude Include="..\src\app\tools\stroke.h" />
+    <ClInclude Include="..\src\app\tools\symmetries.h" />
+    <ClInclude Include="..\src\app\tools\symmetry.h" />
+    <ClInclude Include="..\src\app\tools\tool.h" />
+    <ClInclude Include="..\src\app\tools\tool_box.h" />
+    <ClInclude Include="..\src\app\tools\tool_group.h" />
+    <ClInclude Include="..\src\app\tools\tool_loop.h" />
+    <ClInclude Include="..\src\app\tools\tool_loop_manager.h" />
+    <ClInclude Include="..\src\app\tools\tool_loop_modifiers.h" />
+    <ClInclude Include="..\src\app\tools\trace_policy.h" />
+    <ClInclude Include="..\src\app\tools\velocity.h" />
+    <ClInclude Include="..\src\app\transaction.h" />
+    <ClInclude Include="..\src\app\transformation.h" />
+    <ClInclude Include="..\src\app\tx.h" />
+    <ClInclude Include="..\src\app\ui\app_menuitem.h" />
+    <ClInclude Include="..\src\app\ui\backup_indicator.h" />
+    <ClInclude Include="..\src\app\ui\browser_view.h" />
+    <ClInclude Include="..\src\app\ui\brush_popup.h" />
+    <ClInclude Include="..\src\app\ui\button_set.h" />
+    <ClInclude Include="..\src\app\ui\color_bar.h" />
+    <ClInclude Include="..\src\app\ui\color_button.h" />
+    <ClInclude Include="..\src\app\ui\color_button_options.h" />
+    <ClInclude Include="..\src\app\ui\color_popup.h" />
+    <ClInclude Include="..\src\app\ui\color_selector.h" />
+    <ClInclude Include="..\src\app\ui\color_shades.h" />
+    <ClInclude Include="..\src\app\ui\color_sliders.h" />
+    <ClInclude Include="..\src\app\ui\color_source.h" />
+    <ClInclude Include="..\src\app\ui\color_spectrum.h" />
+    <ClInclude Include="..\src\app\ui\color_tint_shade_tone.h" />
+    <ClInclude Include="..\src\app\ui\color_wheel.h" />
+    <ClInclude Include="..\src\app\ui\configure_timeline_popup.h" />
+    <ClInclude Include="..\src\app\ui\context_bar.h" />
+    <ClInclude Include="..\src\app\ui\context_bar_observer.h" />
+    <ClInclude Include="..\src\app\ui\data_recovery_view.h" />
+    <ClInclude Include="..\src\app\ui\devconsole_view.h" />
+    <ClInclude Include="..\src\app\ui\dithering_selector.h" />
+    <ClInclude Include="..\src\app\ui\doc_observer_widget.h" />
+    <ClInclude Include="..\src\app\ui\doc_view.h" />
+    <ClInclude Include="..\src\app\ui\draggable_widget.h" />
+    <ClInclude Include="..\src\app\ui\drop_down_button.h" />
+    <ClInclude Include="..\src\app\ui\dynamics_popup.h" />
+    <ClInclude Include="..\src\app\ui\editor\brush_preview.h" />
+    <ClInclude Include="..\src\app\ui\editor\drawing_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_customization_delegate.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_decorator.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_hit.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_observer.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_observers.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_render.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_states_history.h" />
+    <ClInclude Include="..\src\app\ui\editor\editor_view.h" />
+    <ClInclude Include="..\src\app\ui\editor\glue.h" />
+    <ClInclude Include="..\src\app\ui\editor\handle_type.h" />
+    <ClInclude Include="..\src\app\ui\editor\moving_cel_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\moving_pixels_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\moving_selection_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\moving_slice_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\moving_symmetry_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\navigate_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\pivot_helpers.h" />
+    <ClInclude Include="..\src\app\ui\editor\pixels_movement.h" />
+    <ClInclude Include="..\src\app\ui\editor\play_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\ruler.h" />
+    <ClInclude Include="..\src\app\ui\editor\scrolling_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\select_box_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\standby_state.h" />
+    <ClInclude Include="..\src\app\ui\editor\state_with_wheel_behavior.h" />
+    <ClInclude Include="..\src\app\ui\editor\tool_loop_impl.h" />
+    <ClInclude Include="..\src\app\ui\editor\transform_handles.h" />
+    <ClInclude Include="..\src\app\ui\editor\zooming_state.h" />
+    <ClInclude Include="..\src\app\ui\export_file_window.h" />
+    <ClInclude Include="..\src\app\ui\expr_entry.h" />
+    <ClInclude Include="..\src\app\ui\filename_field.h" />
+    <ClInclude Include="..\src\app\ui\file_list.h" />
+    <ClInclude Include="..\src\app\ui\file_list_view.h" />
+    <ClInclude Include="..\src\app\ui\file_selector.h" />
+    <ClInclude Include="..\src\app\ui\font_popup.h" />
+    <ClInclude Include="..\src\app\ui\hex_color_entry.h" />
+    <ClInclude Include="..\src\app\ui\home_view.h" />
+    <ClInclude Include="..\src\app\ui\icon_button.h" />
+    <ClInclude Include="..\src\app\ui\input_chain.h" />
+    <ClInclude Include="..\src\app\ui\input_chain_element.h" />
+    <ClInclude Include="..\src\app\ui\key.h" />
+    <ClInclude Include="..\src\app\ui\keyboard_shortcuts.h" />
+    <ClInclude Include="..\src\app\ui\key_context.h" />
+    <ClInclude Include="..\src\app\ui\layer_frame_comboboxes.h" />
+    <ClInclude Include="..\src\app\ui\main_menu_bar.h" />
+    <ClInclude Include="..\src\app\ui\main_window.h" />
+    <ClInclude Include="..\src\app\ui\marching_ants.h" />
+    <ClInclude Include="..\src\app\ui\news_listbox.h" />
+    <ClInclude Include="..\src\app\ui\notifications.h" />
+    <ClInclude Include="..\src\app\ui\optional_alert.h" />
+    <ClInclude Include="..\src\app\ui\palettes_listbox.h" />
+    <ClInclude Include="..\src\app\ui\palette_popup.h" />
+    <ClInclude Include="..\src\app\ui\palette_view.h" />
+    <ClInclude Include="..\src\app\ui\popup_window_pin.h" />
+    <ClInclude Include="..\src\app\ui\pref_widget.h" />
+    <ClInclude Include="..\src\app\ui\preview_editor.h" />
+    <ClInclude Include="..\src\app\ui\recent_listbox.h" />
+    <ClInclude Include="..\src\app\ui\resources_listbox.h" />
+    <ClInclude Include="..\src\app\ui\search_entry.h" />
+    <ClInclude Include="..\src\app\ui\selection_mode_field.h" />
+    <ClInclude Include="..\src\app\ui\select_accelerator.h" />
+    <ClInclude Include="..\src\app\ui\separator_in_view.h" />
+    <ClInclude Include="..\src\app\ui\skin\background_repeat.h" />
+    <ClInclude Include="..\src\app\ui\skin\font_data.h" />
+    <ClInclude Include="..\src\app\ui\skin\skin_part.h" />
+    <ClInclude Include="..\src\app\ui\skin\skin_property.h" />
+    <ClInclude Include="..\src\app\ui\skin\skin_slider_property.h" />
+    <ClInclude Include="..\src\app\ui\skin\skin_theme.h" />
+    <ClInclude Include="..\src\app\ui\slice_window.h" />
+    <ClInclude Include="..\src\app\ui\slider2.h" />
+    <ClInclude Include="..\src\app\ui\status_bar.h" />
+    <ClInclude Include="..\src\app\ui\tabs.h" />
+    <ClInclude Include="..\src\app\ui\tag_window.h" />
+    <ClInclude Include="..\src\app\ui\task_widget.h" />
+    <ClInclude Include="..\src\app\ui\timeline\ani_controls.h" />
+    <ClInclude Include="..\src\app\ui\timeline\timeline.h" />
+    <ClInclude Include="..\src\app\ui\toolbar.h" />
+    <ClInclude Include="..\src\app\ui\user_data_popup.h" />
+    <ClInclude Include="..\src\app\ui\workspace.h" />
+    <ClInclude Include="..\src\app\ui\workspace_panel.h" />
+    <ClInclude Include="..\src\app\ui\workspace_tabs.h" />
+    <ClInclude Include="..\src\app\ui\workspace_view.h" />
+    <ClInclude Include="..\src\app\ui\workspace_views.h" />
+    <ClInclude Include="..\src\app\ui\zoom_entry.h" />
+    <ClInclude Include="..\src\app\ui_context.h" />
+    <ClInclude Include="..\src\app\util\autocrop.h" />
+    <ClInclude Include="..\src\app\util\buffer_region.h" />
+    <ClInclude Include="..\src\app\util\clipboard.h" />
+    <ClInclude Include="..\src\app\util\clipboard_native.h" />
+    <ClInclude Include="..\src\app\util\conversion_to_surface.h" />
+    <ClInclude Include="..\src\app\util\create_cel_copy.h" />
+    <ClInclude Include="..\src\app\util\expand_cel_canvas.h" />
+    <ClInclude Include="..\src\app\util\filetoks.h" />
+    <ClInclude Include="..\src\app\util\freetype_utils.h" />
+    <ClInclude Include="..\src\app\util\layer_boundaries.h" />
+    <ClInclude Include="..\src\app\util\layer_utils.h" />
+    <ClInclude Include="..\src\app\util\msk_file.h" />
+    <ClInclude Include="..\src\app\util\new_image_from_mask.h" />
+    <ClInclude Include="..\src\app\util\open_batch.h" />
+    <ClInclude Include="..\src\app\util\pal_ops.h" />
+    <ClInclude Include="..\src\app\util\pic_file.h" />
+    <ClInclude Include="..\src\app\util\pixel_ratio.h" />
+    <ClInclude Include="..\src\app\util\range_utils.h" />
+    <ClInclude Include="..\src\app\util\readable_time.h" />
+    <ClInclude Include="..\src\app\util\resize_image.h" />
+    <ClInclude Include="..\src\app\util\wrap_point.h" />
+    <ClInclude Include="..\src\app\util\wrap_value.h" />
+    <ClInclude Include="..\src\app\widget_loader.h" />
+    <ClInclude Include="..\src\app\widget_not_found.h" />
+    <ClInclude Include="..\src\app\widget_type_mismatch.h" />
+    <ClInclude Include="..\src\app\xml_document.h" />
+    <ClInclude Include="..\src\app\xml_exception.h" />
+    <ClInclude Include="..\src\cfg\cfg.h" />
+    <ClInclude Include="..\src\clip\clip.h" />
+    <ClInclude Include="..\src\clip\clip_common.h" />
+    <ClInclude Include="..\src\clip\clip_lock_impl.h" />
+    <ClInclude Include="..\src\clip\clip_win_wic.h" />
+    <ClInclude Include="..\src\clip\clip_x11_png.h" />
+    <ClInclude Include="..\src\clip\examples\random.h" />
+    <ClInclude Include="..\src\clip\tests\test.h" />
+    <ClInclude Include="..\src\config.h" />
+    <ClInclude Include="..\src\desktop\linux\kde\aseprite_thumb_creator.h" />
+    <ClInclude Include="..\src\desktop\win\class_factory.h" />
+    <ClInclude Include="..\src\desktop\win\thumbnail_handler.h" />
+    <ClInclude Include="..\src\dio\aseprite_common.h" />
+    <ClInclude Include="..\src\dio\aseprite_decoder.h" />
+    <ClInclude Include="..\src\dio\decoder.h" />
+    <ClInclude Include="..\src\dio\decode_delegate.h" />
+    <ClInclude Include="..\src\dio\decode_file.h" />
+    <ClInclude Include="..\src\dio\detect_format.h" />
+    <ClInclude Include="..\src\dio\file_format.h" />
+    <ClInclude Include="..\src\dio\file_interface.h" />
+    <ClInclude Include="..\src\dio\pixel_io.h" />
+    <ClInclude Include="..\src\doc\algo.h" />
+    <ClInclude Include="..\src\doc\algorithm\fill_selection.h" />
+    <ClInclude Include="..\src\doc\algorithm\flip_image.h" />
+    <ClInclude Include="..\src\doc\algorithm\flip_type.h" />
+    <ClInclude Include="..\src\doc\algorithm\floodfill.h" />
+    <ClInclude Include="..\src\doc\algorithm\hline.h" />
+    <ClInclude Include="..\src\doc\algorithm\modify_selection.h" />
+    <ClInclude Include="..\src\doc\algorithm\polygon.h" />
+    <ClInclude Include="..\src\doc\algorithm\resize_image.h" />
+    <ClInclude Include="..\src\doc\algorithm\rotate.h" />
+    <ClInclude Include="..\src\doc\algorithm\rotsprite.h" />
+    <ClInclude Include="..\src\doc\algorithm\shift_image.h" />
+    <ClInclude Include="..\src\doc\algorithm\shrink_bounds.h" />
+    <ClInclude Include="..\src\doc\algorithm\stroke_selection.h" />
+    <ClInclude Include="..\src\doc\anidir.h" />
+    <ClInclude Include="..\src\doc\blend_funcs.h" />
+    <ClInclude Include="..\src\doc\blend_internals.h" />
+    <ClInclude Include="..\src\doc\blend_mode.h" />
+    <ClInclude Include="..\src\doc\brush.h" />
+    <ClInclude Include="..\src\doc\brushes.h" />
+    <ClInclude Include="..\src\doc\brush_pattern.h" />
+    <ClInclude Include="..\src\doc\brush_type.h" />
+    <ClInclude Include="..\src\doc\cancel_io.h" />
+    <ClInclude Include="..\src\doc\cel.h" />
+    <ClInclude Include="..\src\doc\cels_range.h" />
+    <ClInclude Include="..\src\doc\cel_data.h" />
+    <ClInclude Include="..\src\doc\cel_data_io.h" />
+    <ClInclude Include="..\src\doc\cel_io.h" />
+    <ClInclude Include="..\src\doc\cel_list.h" />
+    <ClInclude Include="..\src\doc\color.h" />
+    <ClInclude Include="..\src\doc\color_mode.h" />
+    <ClInclude Include="..\src\doc\color_scales.h" />
+    <ClInclude Include="..\src\doc\compressed_image.h" />
+    <ClInclude Include="..\src\doc\doc.h" />
+    <ClInclude Include="..\src\doc\document.h" />
+    <ClInclude Include="..\src\doc\file\act_file.h" />
+    <ClInclude Include="..\src\doc\file\col_file.h" />
+    <ClInclude Include="..\src\doc\file\gpl_file.h" />
+    <ClInclude Include="..\src\doc\file\hex_file.h" />
+    <ClInclude Include="..\src\doc\file\pal_file.h" />
+    <ClInclude Include="..\src\doc\frame.h" />
+    <ClInclude Include="..\src\doc\frame_range.h" />
+    <ClInclude Include="..\src\doc\handle_anidir.h" />
+    <ClInclude Include="..\src\doc\image.h" />
+    <ClInclude Include="..\src\doc\images_map.h" />
+    <ClInclude Include="..\src\doc\image_bits.h" />
+    <ClInclude Include="..\src\doc\image_buffer.h" />
+    <ClInclude Include="..\src\doc\image_impl.h" />
+    <ClInclude Include="..\src\doc\image_io.h" />
+    <ClInclude Include="..\src\doc\image_iterator.h" />
+    <ClInclude Include="..\src\doc\image_ref.h" />
+    <ClInclude Include="..\src\doc\image_spec.h" />
+    <ClInclude Include="..\src\doc\image_traits.h" />
+    <ClInclude Include="..\src\doc\keyframes.h" />
+    <ClInclude Include="..\src\doc\layer.h" />
+    <ClInclude Include="..\src\doc\layer_io.h" />
+    <ClInclude Include="..\src\doc\layer_list.h" />
+    <ClInclude Include="..\src\doc\mask.h" />
+    <ClInclude Include="..\src\doc\mask_boundaries.h" />
+    <ClInclude Include="..\src\doc\mask_io.h" />
+    <ClInclude Include="..\src\doc\object.h" />
+    <ClInclude Include="..\src\doc\object_id.h" />
+    <ClInclude Include="..\src\doc\object_ids.h" />
+    <ClInclude Include="..\src\doc\object_type.h" />
+    <ClInclude Include="..\src\doc\object_version.h" />
+    <ClInclude Include="..\src\doc\palette.h" />
+    <ClInclude Include="..\src\doc\palette_io.h" />
+    <ClInclude Include="..\src\doc\palette_picks.h" />
+    <ClInclude Include="..\src\doc\pixel_format.h" />
+    <ClInclude Include="..\src\doc\pixel_ratio.h" />
+    <ClInclude Include="..\src\doc\primitives.h" />
+    <ClInclude Include="..\src\doc\primitives_fast.h" />
+    <ClInclude Include="..\src\doc\remap.h" />
+    <ClInclude Include="..\src\doc\rgbmap.h" />
+    <ClInclude Include="..\src\doc\selected_frames.h" />
+    <ClInclude Include="..\src\doc\selected_layers.h" />
+    <ClInclude Include="..\src\doc\selected_objects.h" />
+    <ClInclude Include="..\src\doc\slice.h" />
+    <ClInclude Include="..\src\doc\slices.h" />
+    <ClInclude Include="..\src\doc\slice_io.h" />
+    <ClInclude Include="..\src\doc\sort_palette.h" />
+    <ClInclude Include="..\src\doc\sprite.h" />
+    <ClInclude Include="..\src\doc\sprites.h" />
+    <ClInclude Include="..\src\doc\string_io.h" />
+    <ClInclude Include="..\src\doc\subobjects_io.h" />
+    <ClInclude Include="..\src\doc\tag.h" />
+    <ClInclude Include="..\src\doc\tags.h" />
+    <ClInclude Include="..\src\doc\tag_io.h" />
+    <ClInclude Include="..\src\doc\user_data.h" />
+    <ClInclude Include="..\src\doc\user_data_io.h" />
+    <ClInclude Include="..\src\doc\with_user_data.h" />
+    <ClInclude Include="..\src\filters\brightness_contrast_filter.h" />
+    <ClInclude Include="..\src\filters\color_curve.h" />
+    <ClInclude Include="..\src\filters\color_curve_filter.h" />
+    <ClInclude Include="..\src\filters\convolution_matrix.h" />
+    <ClInclude Include="..\src\filters\convolution_matrix_filter.h" />
+    <ClInclude Include="..\src\filters\filter.h" />
+    <ClInclude Include="..\src\filters\filter_indexed_data.h" />
+    <ClInclude Include="..\src\filters\filter_manager.h" />
+    <ClInclude Include="..\src\filters\hue_saturation_filter.h" />
+    <ClInclude Include="..\src\filters\invert_color_filter.h" />
+    <ClInclude Include="..\src\filters\median_filter.h" />
+    <ClInclude Include="..\src\filters\neighboring_pixels.h" />
+    <ClInclude Include="..\src\filters\outline_filter.h" />
+    <ClInclude Include="..\src\filters\replace_color_filter.h" />
+    <ClInclude Include="..\src\filters\target.h" />
+    <ClInclude Include="..\src\filters\tiled_mode.h" />
+    <ClInclude Include="..\src\fixmath\fixmath.h" />
+    <ClInclude Include="..\src\flic\flic.h" />
+    <ClInclude Include="..\src\flic\flic_details.h" />
+    <ClInclude Include="..\src\gen\check_strings.h" />
+    <ClInclude Include="..\src\gen\common.h" />
+    <ClInclude Include="..\src\gen\pref_types.h" />
+    <ClInclude Include="..\src\gen\strings_class.h" />
+    <ClInclude Include="..\src\gen\theme_class.h" />
+    <ClInclude Include="..\src\gen\ui_class.h" />
+    <ClInclude Include="..\src\net\http_headers.h" />
+    <ClInclude Include="..\src\net\http_request.h" />
+    <ClInclude Include="..\src\net\http_response.h" />
+    <ClInclude Include="..\src\observable\obs.h" />
+    <ClInclude Include="..\src\observable\obs\connection.h" />
+    <ClInclude Include="..\src\observable\obs\observable.h" />
+    <ClInclude Include="..\src\observable\obs\observers.h" />
+    <ClInclude Include="..\src\observable\obs\safe_list.h" />
+    <ClInclude Include="..\src\observable\obs\signal.h" />
+    <ClInclude Include="..\src\observable\obs\slot.h" />
+    <ClInclude Include="..\src\observable\tests\test.h" />
+    <ClInclude Include="..\src\render\bg_type.h" />
+    <ClInclude Include="..\src\render\color_histogram.h" />
+    <ClInclude Include="..\src\render\dithering.h" />
+    <ClInclude Include="..\src\render\dithering_algorithm.h" />
+    <ClInclude Include="..\src\render\dithering_matrix.h" />
+    <ClInclude Include="..\src\render\error_diffusion.h" />
+    <ClInclude Include="..\src\render\extra_type.h" />
+    <ClInclude Include="..\src\render\get_sprite_pixel.h" />
+    <ClInclude Include="..\src\render\gradient.h" />
+    <ClInclude Include="..\src\render\median_cut.h" />
+    <ClInclude Include="..\src\render\onionskin_options.h" />
+    <ClInclude Include="..\src\render\onionskin_position.h" />
+    <ClInclude Include="..\src\render\onionskin_type.h" />
+    <ClInclude Include="..\src\render\ordered_dither.h" />
+    <ClInclude Include="..\src\render\projection.h" />
+    <ClInclude Include="..\src\render\quantization.h" />
+    <ClInclude Include="..\src\render\render.h" />
+    <ClInclude Include="..\src\render\task_delegate.h" />
+    <ClInclude Include="..\src\render\zoom.h" />
+    <ClInclude Include="..\src\steam\steam.h" />
+    <ClInclude Include="..\src\tests\test.h" />
+    <ClInclude Include="..\src\tga\tga.h" />
+    <ClInclude Include="..\src\ui\accelerator.h" />
+    <ClInclude Include="..\src\ui\alert.h" />
+    <ClInclude Include="..\src\ui\animated_widget.h" />
+    <ClInclude Include="..\src\ui\base.h" />
+    <ClInclude Include="..\src\ui\box.h" />
+    <ClInclude Include="..\src\ui\button.h" />
+    <ClInclude Include="..\src\ui\clipboard_delegate.h" />
+    <ClInclude Include="..\src\ui\close_event.h" />
+    <ClInclude Include="..\src\ui\combobox.h" />
+    <ClInclude Include="..\src\ui\component.h" />
+    <ClInclude Include="..\src\ui\cursor.h" />
+    <ClInclude Include="..\src\ui\cursor_type.h" />
+    <ClInclude Include="..\src\ui\entry.h" />
+    <ClInclude Include="..\src\ui\event.h" />
+    <ClInclude Include="..\src\ui\fit_bounds.h" />
+    <ClInclude Include="..\src\ui\graphics.h" />
+    <ClInclude Include="..\src\ui\grid.h" />
+    <ClInclude Include="..\src\ui\hit_test_event.h" />
+    <ClInclude Include="..\src\ui\image_view.h" />
+    <ClInclude Include="..\src\ui\init_theme_event.h" />
+    <ClInclude Include="..\src\ui\intern.h" />
+    <ClInclude Include="..\src\ui\int_entry.h" />
+    <ClInclude Include="..\src\ui\keys.h" />
+    <ClInclude Include="..\src\ui\label.h" />
+    <ClInclude Include="..\src\ui\layout_io.h" />
+    <ClInclude Include="..\src\ui\link_label.h" />
+    <ClInclude Include="..\src\ui\listbox.h" />
+    <ClInclude Include="..\src\ui\listitem.h" />
+    <ClInclude Include="..\src\ui\load_layout_event.h" />
+    <ClInclude Include="..\src\ui\manager.h" />
+    <ClInclude Include="..\src\ui\menu.h" />
+    <ClInclude Include="..\src\ui\message.h" />
+    <ClInclude Include="..\src\ui\message_loop.h" />
+    <ClInclude Include="..\src\ui\message_type.h" />
+    <ClInclude Include="..\src\ui\mouse_button.h" />
+    <ClInclude Include="..\src\ui\move_region.h" />
+    <ClInclude Include="..\src\ui\overlay.h" />
+    <ClInclude Include="..\src\ui\overlay_manager.h" />
+    <ClInclude Include="..\src\ui\paint_event.h" />
+    <ClInclude Include="..\src\ui\panel.h" />
+    <ClInclude Include="..\src\ui\pointer_type.h" />
+    <ClInclude Include="..\src\ui\popup_window.h" />
+    <ClInclude Include="..\src\ui\property.h" />
+    <ClInclude Include="..\src\ui\register_message.h" />
+    <ClInclude Include="..\src\ui\resize_event.h" />
+    <ClInclude Include="..\src\ui\save_layout_event.h" />
+    <ClInclude Include="..\src\ui\scale.h" />
+    <ClInclude Include="..\src\ui\scroll_bar.h" />
+    <ClInclude Include="..\src\ui\scroll_helper.h" />
+    <ClInclude Include="..\src\ui\scroll_region_event.h" />
+    <ClInclude Include="..\src\ui\separator.h" />
+    <ClInclude Include="..\src\ui\size_hint_event.h" />
+    <ClInclude Include="..\src\ui\slider.h" />
+    <ClInclude Include="..\src\ui\splitter.h" />
+    <ClInclude Include="..\src\ui\style.h" />
+    <ClInclude Include="..\src\ui\system.h" />
+    <ClInclude Include="..\src\ui\textbox.h" />
+    <ClInclude Include="..\src\ui\theme.h" />
+    <ClInclude Include="..\src\ui\timer.h" />
+    <ClInclude Include="..\src\ui\tooltips.h" />
+    <ClInclude Include="..\src\ui\ui.h" />
+    <ClInclude Include="..\src\ui\view.h" />
+    <ClInclude Include="..\src\ui\viewport.h" />
+    <ClInclude Include="..\src\ui\widget.h" />
+    <ClInclude Include="..\src\ui\widgets_list.h" />
+    <ClInclude Include="..\src\ui\widget_type.h" />
+    <ClInclude Include="..\src\ui\window.h" />
+    <ClInclude Include="..\src\undo\tests\cmd.h" />
+    <ClInclude Include="..\src\undo\tests\test.h" />
+    <ClInclude Include="..\src\undo\undo_command.h" />
+    <ClInclude Include="..\src\undo\undo_history.h" />
+    <ClInclude Include="..\src\undo\undo_state.h" />
+    <ClInclude Include="..\src\updater\check_update.h" />
+    <ClInclude Include="..\src\updater\user_agent.h" />
+    <ClInclude Include="..\src\ver\info.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\main\resources_win32.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\src\main\settings.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\src\CMakeLists.txt" />
+  </ItemGroup>
+</Project>

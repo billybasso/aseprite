@@ -65,6 +65,9 @@ struct ExportSpriteSheetParams : public NewParams {
   Param<int> height { this, 0, "height" };
   Param<std::string> textureFilename { this, std::string(), "textureFilename" };
   Param<std::string> dataFilename { this, std::string(), "dataFilename" };
+  //BEGIN BBASSO MOD
+  Param<std::string> btaFilename { this, std::string(), "btaFilename" };
+  //END BBASSO MOD
   Param<SpriteSheetDataFormat> dataFormat { this, SpriteSheetDataFormat::Default, "dataFormat" };
   Param<std::string> filenameFormat { this, std::string(), "filenameFormat" };
   Param<int> borderPadding { this, 0, "borderPadding" };
@@ -181,6 +184,9 @@ Doc* generate_sprite_sheet_from_params(
   const int height = params.height();
   const std::string filename = params.textureFilename();
   const std::string dataFilename = params.dataFilename();
+  //BEGIN BBASSO MOD
+  const std::string btaFilename = params.btaFilename();
+  //END BBASSO MOD
   const SpriteSheetDataFormat dataFormat = params.dataFormat();
   const std::string filenameFormat = params.filenameFormat();
   const std::string layerName = params.layer();
@@ -239,6 +245,10 @@ Doc* generate_sprite_sheet_from_params(
     if (!dataFilename.empty()) {
       exporter.setDataFilename(dataFilename);
       exporter.setDataFormat(dataFormat);
+    }
+    //BEGIN BBASSO MOD
+    if (!btaFilename.empty()) {
+       exporter.setBtaFilename(btaFilename);
     }
   }
   if (!filenameFormat.empty())
@@ -324,6 +334,8 @@ public:
     closeBordersSection()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onCloseSection, this, kSectionBorders));
     closeOutputSection()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onCloseSection, this, kSectionOutput));
 
+	 //STPID  CHANGE
+
     static_assert(
       (int)app::SpriteSheetType::None == 0 &&
       (int)app::SpriteSheetType::Horizontal == 1 &&
@@ -403,6 +415,10 @@ public:
 
     m_dataFilename = params.dataFilename();
     dataEnabled()->setSelected(!m_dataFilename.empty());
+    //BEGIN BBASSO MOD
+    m_btaFilename = params.btaFilename();
+    btaEnabled()->setSelected(!m_btaFilename.empty());
+    //END BBASSO MOD
     dataFormat()->setSelectedItemIndex(int(params.dataFormat()));
     splitLayers()->setSelected(params.splitLayers());
     splitTags()->setSelected(params.splitTags());
@@ -412,6 +428,9 @@ public:
 
     updateDefaultDataFilenameFormat();
     updateDataFields();
+    //BEGIN BBASSO MOD
+    updateBtaFields();
+    //END BBASSO MOD
 
     std::string base = site.document()->filename();
     base = base::join_path(base::get_file_path(base), base::get_file_title(base));
@@ -430,6 +449,12 @@ public:
         m_dataFilename == kSpecifiedFilename)
       m_dataFilename = base + ".json";
 
+    //BEGIN BBASSO MOD
+    if (m_btaFilename.empty() ||
+       m_btaFilename == kSpecifiedFilename)
+       m_btaFilename = base + ".bta";
+   //END BBASSO MOD
+
     exportButton()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onExport, this));
     sheetType()->Change.connect(&ExportSpriteSheetWindow::onSheetTypeChange, this);
     constraintType()->Change.connect(&ExportSpriteSheetWindow::onConstraintTypeChange, this);
@@ -445,6 +470,10 @@ public:
     imageFilename()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onImageFilename, this));
     dataEnabled()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onDataEnabledChange, this));
     dataFilename()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onDataFilename, this));
+    //BEGIN BBASSO MOD
+    btaEnabled()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onBtaEnabledChange, this));
+    btaFilename()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onBtaFilename, this));
+    //END BBASSO MOD
     trimSpriteEnabled()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onTrimEnabledChange, this));
     trimEnabled()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onTrimEnabledChange, this));
     gridTrimEnabled()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::generatePreview, this));
@@ -519,6 +548,9 @@ public:
     params.height          (heightValue());
     params.textureFilename (filenameValue());
     params.dataFilename    (dataFilenameValue());
+    //BEGIN BBASSO MOD
+    params.btaFilename     (btaFilenameValue());
+    //END BBASSO MOD
     params.dataFormat      (dataFormatValue());
     params.filenameFormat  (filenameFormatValue());
     params.borderPadding   (borderPaddingValue());
@@ -649,6 +681,14 @@ private:
     else
       return std::string();
   }
+  //BEGIN BBASSO MOD
+  std::string btaFilenameValue() const {
+     if (btaEnabled()->isSelected())
+        return m_btaFilename;
+     else
+        return std::string();
+  }
+  //END BBASSO MOD
 
   std::string filenameFormatValue() const {
     if (!m_filenameFormat.empty() &&
@@ -830,6 +870,9 @@ private:
   void onFileNamesChange() {
     imageFilename()->setText(base::get_file_name(m_filename));
     dataFilename()->setText(base::get_file_name(m_dataFilename));
+    //BEGIN BBASSO MOD
+    btaFilename()->setText(base::get_file_name(m_btaFilename));
+   //END BBASSO MOD
     resize();
   }
 
@@ -880,6 +923,31 @@ private:
     resize();
   }
 
+//BEGIN BBASSO MOD
+  void onBtaFilename() {
+     // TODO hardcoded "bta" extension
+     base::paths exts = { "bta" };
+     base::paths newFilename;
+     if (!app::show_file_selector(
+        "Save BT Animation", m_btaFilename, exts,
+        FileSelectorType::Save, newFilename))
+        return;
+
+     ASSERT(!newFilename.empty());
+
+     m_btaFilename = newFilename.front();
+     onFileNamesChange();
+  }
+
+
+  void onBtaEnabledChange() {
+     m_dataFilenameAskOverwrite = true;
+     updateBtaFields();
+     updateExportButton();
+     resize();
+  }
+//END BBASSO MOD
+
   void onTrimEnabledChange() {
     trimContainer()->setVisible(
       trimSpriteEnabled()->isSelected() ||
@@ -914,6 +982,9 @@ private:
     exportButton()->setEnabled(
       imageEnabled()->isSelected() ||
       dataEnabled()->isSelected() ||
+      //BEGIN BBASSO MOD
+      btaEnabled()->isSelected() ||
+      //END BBASSO MOD
       openGenerated()->isSelected());
   }
 
@@ -939,6 +1010,14 @@ private:
     dataMeta()->setVisible(state);
     dataFilenameFormatPlaceholder()->setVisible(state);
   }
+
+  //BEGIN BBASSO MOD
+  void updateBtaFields() {
+     bool state = btaEnabled()->isSelected();
+     btaFilename()->setVisible(state);
+
+  }
+  //END BBASSO MOD
 
   void onGenTimerTick() {
     if (!m_genTask) {
@@ -1116,6 +1195,9 @@ private:
   Sprite* m_sprite;
   std::string m_filename;
   std::string m_dataFilename;
+  //BEGIN BBASSO MOD
+  std::string m_btaFilename;
+  //END BBASSO MOD
   bool m_filenameAskOverwrite;
   bool m_dataFilenameAskOverwrite;
   std::unique_ptr<Doc> m_spriteSheet;
@@ -1224,6 +1306,9 @@ void ExportSpriteSheetCommand::onExecute(Context* context)
       if (!params.height.isSet())           params.height(          defPref.spriteSheet.height());
       if (!params.textureFilename.isSet())  params.textureFilename( defPref.spriteSheet.textureFilename());
       if (!params.dataFilename.isSet())     params.dataFilename(    defPref.spriteSheet.dataFilename());
+      //BEGIN BBASSO MOD
+      if (!params.btaFilename.isSet())     params.btaFilename(    defPref.spriteSheet.btaFilename());
+      //END BBASSO MOD
       if (!params.dataFormat.isSet())       params.dataFormat(      defPref.spriteSheet.dataFormat());
       if (!params.filenameFormat.isSet())   params.filenameFormat(  defPref.spriteSheet.filenameFormat());
       if (!params.borderPadding.isSet())    params.borderPadding(   defPref.spriteSheet.borderPadding());
@@ -1270,6 +1355,9 @@ void ExportSpriteSheetCommand::onExecute(Context* context)
     docPref.spriteSheet.height          (params.height());
     docPref.spriteSheet.textureFilename (params.textureFilename());
     docPref.spriteSheet.dataFilename    (params.dataFilename());
+    //BEGIN BBASSO MOD
+    docPref.spriteSheet.btaFilename     (params.btaFilename());
+    //END BBASSO MOD
     docPref.spriteSheet.dataFormat      (params.dataFormat());
     docPref.spriteSheet.filenameFormat  (params.filenameFormat());
     docPref.spriteSheet.borderPadding   (params.borderPadding());
@@ -1298,6 +1386,10 @@ void ExportSpriteSheetCommand::onExecute(Context* context)
       defPref.spriteSheet.textureFilename.setValueAndDefault(kSpecifiedFilename);
     if (!defPref.spriteSheet.dataFilename().empty())
       defPref.spriteSheet.dataFilename.setValueAndDefault(kSpecifiedFilename);
+    //BEGIN BBASSO MOD
+    if (!defPref.spriteSheet.btaFilename().empty())
+       defPref.spriteSheet.btaFilename.setValueAndDefault(kSpecifiedFilename);
+    //END BBASSO MOD
     defPref.save();
 
     askOverwrite = false; // Already asked in the ExportSpriteSheetWindow
