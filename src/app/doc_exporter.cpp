@@ -1373,6 +1373,9 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
            anim->cels[index] = imageIndex;
         }
      }
+	  anim->cels = nullptr;
+	  anim->images = nullptr;
+	  anim->tags = nullptr;
   }
 }
 //END BBASSO MOD
