@@ -715,7 +715,7 @@ Doc* DocExporter::exportSheet(Context* ctx, base::task_token& token)
   }
 
   //BEGIN BBASSO MOD
-  if (!m_btaFilename.empty() && ctx->isUIAvailable()) {
+  if (!m_btaFilename.empty()) {
 
     std::string dir = base::get_file_path(m_btaFilename);
     try {
@@ -1341,7 +1341,7 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
      doc::LayerList layers = sprite->allLayers();
      for (const Sample& sample : samples)
      {
-        if (sample.isLinked() && sample.isDuplicated())
+        if (sample.isLinked() || sample.isDuplicated() || sample.isEmpty())
         {
            continue;
         }
