@@ -5,7 +5,8 @@
 <window id="about" text="About Aseprite">
   <vbox>
     <label text="" id="title" />
-    <label text="Animated sprite editor &amp;&amp; pixel art tool" />
+    <label text="Animated sprite editor &amp;&amp; pixel art tool"/>
+    <label text="Modified to include support for Bean Tech Animation files" />
     <separator text="Authors:" horizontal="true" />
     <grid columns="2">
       <link text="David Capello" url="https://twitter.com/davidcapello" />
@@ -16,7 +17,10 @@
       <separator text="Contributors:" horizontal="true" cell_hspan="2" />
       <link text="Ilija Melentijevic" url="https://ilkke.net/" />
       <label text="- Default skin &amp;&amp; graphics introduced in v0.8" />
-
+      <!--BEGIN BBASSO MOD-->
+      <link text="Billy Basso" url="https://twitter.com/billy_basso" />
+      <label text="- Support for BeanTech Animation format" />
+      <!-- END BBASSO MOD-->
       <hbox cell_hspan="2">
 	<link text="Other Contributors" url="https://www.aseprite.org/contributors/" />
         <label text="&amp;&amp;" />
