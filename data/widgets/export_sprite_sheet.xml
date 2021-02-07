@@ -111,6 +111,8 @@
 
       <check id="data_enabled" text="@.json_data" />
       <button id="data_filename" cell_hspan="3" cell_align="horizontal" />
+      <check id="bta_enabled" text="@.bta_data" />
+      <button id="bta_filename" cell_hspan="3" cell_align="horizontal" />
 
       <hbox />
       <hbox id="data_meta" cell_hspan="3" cell_align="horizontal">

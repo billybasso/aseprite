@@ -54,6 +54,10 @@ namespace app {
 
     void setDataFormat(SpriteSheetDataFormat format) { m_dataFormat = format; }
     void setDataFilename(const std::string& filename) { m_dataFilename = filename; }
+    //BEGIN BBASSO MOD
+    const std::string& btaFilename() { return m_btaFilename; }
+    void setBtaFilename(const std::string& filename) { m_btaFilename = filename; }
+    //END BBASSO MOD
     void setTextureFilename(const std::string& filename) { m_textureFilename = filename; }
     void setTextureWidth(int width) { m_textureWidth = width; }
     void setTextureHeight(int height) { m_textureHeight = height; }
@@ -114,6 +118,9 @@ namespace app {
                        base::task_token& token) const;
     void trimTexture(const Samples& samples, doc::Sprite* texture) const;
     void createDataFile(const Samples& samples, std::ostream& os, doc::Sprite* texture);
+    //BEGIN BBASSO MOD
+    void createBTAFile(const Samples& samples, const doc::Sprite* sprite, void** dataOut, size_t* sizeOut);
+    //END BBASSO MOD
 
     class Item {
     public:
@@ -141,6 +148,9 @@ namespace app {
     SpriteSheetType m_sheetType;
     SpriteSheetDataFormat m_dataFormat;
     std::string m_dataFilename;
+    //BEGIN BBASSO MOD
+    std::string m_btaFilename;
+    //END BBASSO MOD
     std::string m_textureFilename;
     std::string m_filenameFormat;
     int m_textureWidth;
