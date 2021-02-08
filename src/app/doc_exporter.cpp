@@ -57,6 +57,7 @@
 #include <vector>
 
 //BEGIN BBASSO MOD
+#include <string.h>
 #include <unordered_map>
 #include "BeanTechAnimationFormat.h"
 //END BBASSO MOD
@@ -1290,20 +1291,27 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
    std::vector<Image*> images;
    sprite->getImages(images);
 
+
+
+
    int numImages = images.size();
    int numTags = sprite->tags().size();
-   int numLayers = sprite->allVisibleLayers().size();
+   int numLayers = sprite->allLayersCount();
    int numFrames = sprite->totalFrames();
-   size_t totalSize = sizeof(BTA)
-                    + sizeof(BTA::Tag) * numTags
-                    + sizeof(BTA::ImageIndex) * numLayers * numFrames
-                    + sizeof(BTA::Image) * numImages;
+	size_t totalSize = sizeof(BTA)
+		              + sizeof(BTA::Tag) * numTags
+		              + sizeof(BTA::ImageIndex) * numLayers * numFrames
+		              + sizeof(BTA::Image) * numImages
+		              + sizeof(BTA::Layer) * numLayers;
   *dataOut = malloc(totalSize);
   *sizeOut = totalSize;
+
+  memset(*dataOut, 0x00, totalSize);
 
   size_t tagsOffset = sizeof(BTA);
   size_t imageIndicesOffset = tagsOffset + sizeof(BTA::Tag) * numTags;
   size_t imagesOffset = imageIndicesOffset + sizeof(BTA::ImageIndex) * numLayers * numFrames;
+  size_t layersOffset = imagesOffset + sizeof(BTA::Image) * numImages;
 
   BT::BTAnimation* anim = new(*dataOut)BT::BTAnimation;
   anim->version = BT::BTAnimation::CURRENT_VERSION;
@@ -1315,6 +1323,7 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
   anim->images = (BTA::Image*)(((char*)*dataOut) + imagesOffset);
   anim->tags = (BTA::Tag*)(((char*)*dataOut) + tagsOffset);
   anim->cels = (BTA::ImageIndex*)(((char*)*dataOut) + imageIndicesOffset);
+  anim->layers = (BTA::Layer*)(((char*)*dataOut) + layersOffset);
   //copy the tags
   int i = 0;
   for (auto tag : sprite->tags())
@@ -1325,6 +1334,8 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
      strcpy_s(anim->tags[i].name, BTA::Tag::MAX_TAG_NAME_LENGTH, tag->name().c_str());
      ++i;
   }
+
+
 
   //write out the image list
   {
@@ -1338,6 +1349,26 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
      {
         layerIndexMap[sprite->allLayers()[i]] = i;
      }
+
+	  for (Layer* layer : sprite->allLayers())
+	  {
+		  volatile int index = layerIndexMap[layer];
+		  anim->layers[index].visible = layer->isVisible();
+		  strcpy(anim->layers[index].name, layer->name().c_str());
+		  if (layer->isTransparent())
+		  {
+			  
+			  anim->layers[index].blendMode = (BT::BTAnimation::ELayerBlendMode)static_cast<LayerImage*>(layer)->blendMode();
+			  anim->layers[index].opacity   = static_cast<LayerImage*>(layer)->opacity();
+		  }
+		  else
+		  {
+			  anim->layers[index].blendMode = BT::BTAnimation::ELayerBlendMode::normal;
+			  anim->layers[index].opacity = 255;
+		  }
+
+	  }
+
      doc::LayerList layers = sprite->allLayers();
      for (const Sample& sample : samples)
      {
@@ -1347,10 +1378,10 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
         }
 
 
-        int layerIndex = layerIndexMap[sample.layer()];
+        volatile int layerIndex = layerIndexMap[sample.layer()];
         Layer* layer = layers[layerIndex];
         doc::Cel* cel = layer->cel(sample.frame());
-        int imageIndex = imageIndexMap[cel->image()];
+        volatile int imageIndex = imageIndexMap[cel->image()];
         BTA::Image& image = anim->images[imageIndex];
         image.u = sample.inTextureBounds().x;
         image.v = sample.inTextureBounds().y;
@@ -1376,6 +1407,7 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
 	  anim->cels = nullptr;
 	  anim->images = nullptr;
 	  anim->tags = nullptr;
+	  anim->layers = nullptr;
   }
 }
 //END BBASSO MOD
