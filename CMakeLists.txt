@@ -306,7 +306,7 @@ if(REQUIRE_CURL)
   include_directories(${CURL_INCLUDE_DIRS})
 endif()
 
-
+include_directories("C:/Users/bigdo/source/repos/BeanTech/BeanTech/Source")
 
 
 # simpleini

@@ -1283,7 +1283,7 @@ void DocExporter::trimTexture(const Samples& samples,
 //BEGIN BBASSO MOD
 void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprite, void** dataOut, size_t* sizeOut)
 {
-   using BTA = BT::BTAnimation;
+   using BTA = BT::Animation;
    ASSERT(sprite);
    ASSERT(dataOut);
    ASSERT(sizeOut);
@@ -1313,8 +1313,8 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
   size_t imagesOffset = imageIndicesOffset + sizeof(BTA::ImageIndex) * numLayers * numFrames;
   size_t layersOffset = imagesOffset + sizeof(BTA::Image) * numImages;
 
-  BT::BTAnimation* anim = new(*dataOut)BT::BTAnimation;
-  anim->version = BT::BTAnimation::CURRENT_VERSION;
+  BT::Animation* anim = new(*dataOut)BT::Animation;
+  anim->version = BT::Animation::CURRENT_VERSION;
   anim->magicNumber = 0xAC1D;
   anim->numTags = numTags;
   anim->numImages = numImages;
@@ -1358,12 +1358,12 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
 		  if (layer->isTransparent())
 		  {
 			  
-			  anim->layers[index].blendMode = (BT::BTAnimation::ELayerBlendMode)static_cast<LayerImage*>(layer)->blendMode();
+			  anim->layers[index].blendMode = (BT::Animation::ELayerBlendMode)static_cast<LayerImage*>(layer)->blendMode();
 			  anim->layers[index].opacity   = static_cast<LayerImage*>(layer)->opacity();
 		  }
 		  else
 		  {
-			  anim->layers[index].blendMode = BT::BTAnimation::ELayerBlendMode::normal;
+			  anim->layers[index].blendMode = BT::Animation::ELayerBlendMode::normal;
 			  anim->layers[index].opacity = 255;
 		  }
 
@@ -1372,7 +1372,7 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
      doc::LayerList layers = sprite->allLayers();
      for (const Sample& sample : samples)
      {
-        if (sample.isLinked() || sample.isDuplicated() || sample.isEmpty())
+        if (sample.isLinked() || sample.isEmpty())
         {
            continue;
         }
@@ -1398,10 +1398,17 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
         {
            Layer* layer = layers[layerIndex];
            doc::Cel* cel = layer->cel(frameIndex);
-           int imageIndex = imageIndexMap[cel->image()];
-
-           int index = frameIndex * numLayers + layerIndex;
-           anim->cels[index] = imageIndex;
+           if (cel != nullptr)
+           {
+              int imageIndex = imageIndexMap[cel->image()];
+              int index = frameIndex * numLayers + layerIndex;
+              anim->cels[index] = imageIndex;
+           }
+           else
+           {
+				  int index = frameIndex * numLayers + layerIndex;
+              anim->cels[index] = 0xFF;
+           }
         }
      }
 	  anim->cels = nullptr;
