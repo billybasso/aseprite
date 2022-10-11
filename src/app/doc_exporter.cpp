@@ -1320,6 +1320,8 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
   anim->numImages = numImages;
   anim->numLayers = numLayers;
   anim->numFrames = numFrames;
+  anim->width = sprite->width();
+  anim->height = sprite->height();
   anim->images = (BTA::Image*)(((char*)*dataOut) + imagesOffset);
   anim->tags = (BTA::Tag*)(((char*)*dataOut) + tagsOffset);
   anim->cels = (BTA::ImageIndex*)(((char*)*dataOut) + imageIndicesOffset);

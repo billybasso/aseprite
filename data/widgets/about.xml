@@ -19,7 +19,7 @@
       <label text="- Default skin &amp;&amp; graphics introduced in v0.8" />
       <!--BEGIN BBASSO MOD-->
       <link text="Billy Basso" url="https://twitter.com/billy_basso" />
-      <label text="- Support for BeanTech Animation format" />
+      <label text="- Support for BeanTech Animation format V2" />
       <!-- END BBASSO MOD-->
       <hbox cell_hspan="2">
 	<link text="Other Contributors" url="https://www.aseprite.org/contributors/" />

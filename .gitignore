@@ -16,3 +16,7 @@
 build
 C:\aseprite\asepriteSource\.vs
 C:\aseprite\asepriteSource\x64
+/asepriteSource/.vs/aseprite
+/asepriteSource/x64/Release/asepriteSource.tlog
+/asepriteSource/.vs
+/deps/skia
