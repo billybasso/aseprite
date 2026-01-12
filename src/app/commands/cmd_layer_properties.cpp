@@ -98,7 +98,11 @@ public:
     mode()->addItem(new BlendModeItem("Saturation", doc::BlendMode::HSL_SATURATION));
     mode()->addItem(new BlendModeItem("Color", doc::BlendMode::HSL_COLOR));
     mode()->addItem(new BlendModeItem("Luminosity", doc::BlendMode::HSL_LUMINOSITY));
-
+//BEGIN BBASSO MOD
+    mode()->addItem(new SeparatorInView);
+    mode()->addItem(new BlendModeItem("Depth", doc::BlendMode::DEPTH));
+    mode()->addItem(new BlendModeItem("Smoothness", doc::BlendMode::SMOOTHNESS));
+//END BBASSO MOD
     name()->Change.connect(base::Bind<void>(&LayerPropertiesWindow::onStartTimer, this));
     mode()->Change.connect(base::Bind<void>(&LayerPropertiesWindow::onStartTimer, this));
     opacity()->Change.connect(base::Bind<void>(&LayerPropertiesWindow::onStartTimer, this));

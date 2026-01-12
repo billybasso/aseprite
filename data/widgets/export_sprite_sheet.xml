@@ -111,9 +111,10 @@
 
       <check id="data_enabled" text="@.json_data" />
       <button id="data_filename" cell_hspan="3" cell_align="horizontal" />
+<!-- BEGIN BBASSO MOD -->
       <check id="bta_enabled" text="@.bta_data" />
       <button id="bta_filename" cell_hspan="3" cell_align="horizontal" />
-
+<!-- END BBASSO MOD -->
       <hbox />
       <hbox id="data_meta" cell_hspan="3" cell_align="horizontal">
         <combobox id="data_format">

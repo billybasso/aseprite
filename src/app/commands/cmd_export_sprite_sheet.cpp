@@ -418,6 +418,8 @@ public:
     //BEGIN BBASSO MOD
     m_btaFilename = params.btaFilename();
     btaEnabled()->setSelected(!m_btaFilename.empty());
+    imageEnabled()->setSelected(true); //we pretty much always want to export an image
+    imageFilename()->setVisible(true);
     //END BBASSO MOD
     dataFormat()->setSelectedItemIndex(int(params.dataFormat()));
     splitLayers()->setSelected(params.splitLayers());
@@ -439,10 +441,16 @@ public:
         m_filename == kSpecifiedFilename) {
       std::string defExt = pref.spriteSheet.defaultExtension();
 
+      //BEGIN BBASSO MOD
+      std::string dir = base::get_canonical_path(base::join_path(base::get_file_path(base), "../../Sprites/"));
+      m_filename = dir + "_" + base::get_file_title(base) + "." + defExt;
+      /*
       if (base::utf8_icmp(base::get_file_extension(site.document()->filename()), defExt) == 0)
         m_filename = base + "-sheet." + defExt;
       else
         m_filename = base + "." + defExt;
+      */
+      //END BBASSO MOD
     }
 
     if (m_dataFilename.empty() ||
@@ -451,8 +459,12 @@ public:
 
     //BEGIN BBASSO MOD
     if (m_btaFilename.empty() ||
-       m_btaFilename == kSpecifiedFilename)
-       m_btaFilename = base + ".bta";
+        m_btaFilename == kSpecifiedFilename)
+    {
+
+        std::string dir = base::get_canonical_path(base::join_path(base::get_file_path(base), "../../Assets/"));
+        m_btaFilename =  dir + base::get_file_title(base) + ".bta";
+    }
    //END BBASSO MOD
 
     exportButton()->Click.connect(base::Bind<void>(&ExportSpriteSheetWindow::onExport, this));

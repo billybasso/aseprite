@@ -34,6 +34,10 @@ std::string blend_mode_to_string(BlendMode blendMode)
     case BlendMode::ADDITION: return "addition";
     case BlendMode::SUBTRACT: return "subtract";
     case BlendMode::DIVIDE: return "divide";
+//BEGIN BBASSO MOD
+    case BlendMode::DEPTH: return "depth";
+    case BlendMode::SMOOTHNESS: return "smoothness";
+//END BBASSO MOD
     default: return "unknown";
   }
 }

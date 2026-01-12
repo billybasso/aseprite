@@ -41,7 +41,11 @@ namespace doc {
     HSL_LUMINOSITY  = 15,
     ADDITION        = 16,
     SUBTRACT        = 17,
-    DIVIDE          = 18
+    DIVIDE          = 18,
+    //BEGIN BBASSO MOD
+    DEPTH           = 19,
+    SMOOTHNESS      = 20,
+    //END BBASSO MOD
   };
 
   std::string blend_mode_to_string(BlendMode blendMode);

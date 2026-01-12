@@ -487,7 +487,9 @@
       <option id="open_generated" type="bool" default="false" />
       <option id="layer" type="std::string" />
       <option id="frame_tag" type="std::string" />
-      <option id="split_layers" type="bool" default="false" />
+		<!--BEGIN BBASSO MOD - changed default to true-->
+      <option id="split_layers" type="bool" default="true" />
+		<!--END BBASSO MOD-->
       <option id="split_tags" type="bool" default="false" />
       <option id="list_layers" type="bool" default="true" />
       <option id="list_frame_tags" type="bool" default="true" />

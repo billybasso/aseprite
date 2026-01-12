@@ -1333,7 +1333,6 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
      anim->tags[i].direction = (BTA::EAnimationDirection)tag->aniDir();
      anim->tags[i].from = tag->fromFrame();
      anim->tags[i].to = tag->toFrame();
-     strcpy_s(anim->tags[i].name, BTA::Tag::MAX_TAG_NAME_LENGTH, tag->name().c_str());
      ++i;
   }
 
@@ -1356,7 +1355,6 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
 	  {
 		  volatile int index = layerIndexMap[layer];
 		  anim->layers[index].visible = layer->isVisible();
-		  strcpy(anim->layers[index].name, layer->name().c_str());
 		  if (layer->isTransparent())
 		  {
 			  
@@ -1383,14 +1381,18 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
         volatile int layerIndex = layerIndexMap[sample.layer()];
         Layer* layer = layers[layerIndex];
         doc::Cel* cel = layer->cel(sample.frame());
-        volatile int imageIndex = imageIndexMap[cel->image()];
-        BTA::Image& image = anim->images[imageIndex];
-        image.u = sample.inTextureBounds().x;
-        image.v = sample.inTextureBounds().y;
-        image.x = sample.trimmedBounds().x;
-        image.y = sample.trimmedBounds().y;
-        image.w = sample.inTextureBounds().w;
-        image.h = sample.inTextureBounds().h;
+        if (cel)
+        {
+            volatile int imageIndex = imageIndexMap[cel->image()];
+            BTA::Image& image = anim->images[imageIndex];
+            image.u = sample.inTextureBounds().x;
+            image.v = sample.inTextureBounds().y;
+            image.x = sample.trimmedBounds().x;
+            image.y = sample.trimmedBounds().y;
+            image.w = sample.inTextureBounds().w;
+            image.h = sample.inTextureBounds().h;
+        }
+        
      }
 
      //write out the cel grid
