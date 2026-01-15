@@ -32,6 +32,10 @@ namespace doc {
   class SelectedLayers;
   class Sprite;
   class Tag;
+  //BEGIN BASSO MOD
+  enum class BlendMode;
+  class Layer;
+  //END BBASSO MOD
 }
 
 namespace app {
@@ -106,6 +110,15 @@ namespace app {
 
     void captureSamples(Samples& samples,
                         base::task_token& token);
+
+    //BEGIN BBASSO MOD
+    typedef std::vector<doc::Layer*> LayerList;
+    void captureAndAlignMaterialSamples(const Samples& albedoSamples, Samples& materialSamples, base::task_token& token);
+    void captureMaterialSample(doc::Sprite* sprite, Doc* doc, const Sample& sample, Samples& materialSamples, const LayerList& allLayers, int albedoLayerIndex, doc::BlendMode blendModeIdentifier);
+    void captureDepthSampleForAdditive(doc::Sprite* sprite, Doc* doc, const Sample& sample, Samples& materialSamples, const LayerList& allLayers, int additiveLayerIndex);
+    Doc* createEmptyMaterialTexture(const Samples& samples, int width, int height) const;
+    //END BBASSO MOD
+
     void layoutSamples(Samples& samples,
                        base::task_token& token);
     gfx::Size calculateSheetSize(const Samples& samples,

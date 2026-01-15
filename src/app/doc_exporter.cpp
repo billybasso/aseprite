@@ -308,6 +308,50 @@ public:
     }
   }
 
+  //BEGIN BBASSO MOD -- mostly copy pasta'd from renderSample()
+  void renderMaterialSample(doc::Image* dst, int x, int y, bool extrude) const {
+
+      RestoreVisibleLayers layersVisibility;
+      if (m_selLayers)
+          layersVisibility.showSelectedLayers(m_sprite,
+              *m_selLayers);
+
+      render::Render render;
+
+      if (extrude) {
+          const gfx::Rect& trim = m_trimmedBounds;
+
+          // Displaced position onto the destination texture
+          int dx[] = { 0, 1, trim.w + 1 };
+          int dy[] = { 0, 1, trim.h + 1 };
+
+          // Starting point of the area to be copied from the original image
+          // taking into account the size of the trimmed sprite
+          int srcx[] = { trim.x, trim.x, trim.x2() - 1 };
+          int srcy[] = { trim.y, trim.y, trim.y2() - 1 };
+
+          // Size of the area to be copied from original image, starting at
+          // the point (srcx[i], srxy[j])
+          int szx[] = { 1, trim.w, 1 };
+          int szy[] = { 1, trim.h, 1 };
+
+          // Render a 9-patch image extruding the sample one pixel on each
+          // side.
+          for (int j = 0; j < 3; ++j) {
+              for (int i = 0; i < 3; ++i) {
+                  gfx::Clip clip(x + dx[i], y + dy[j], gfx::RectT<int>(srcx[i], srcy[j], szx[i], szy[j]));
+                  render.renderMaterialSprite(dst, m_sprite, m_frame, clip);
+              }
+          }
+      }
+      else {
+          gfx::Clip clip(x, y, m_trimmedBounds);
+          render.renderMaterialSprite(dst, m_sprite, m_frame, clip);
+      }
+  }
+  //END BBASSO MOD
+
+
 private:
   Doc* m_document;
   Sprite* m_sprite;
@@ -715,37 +759,6 @@ Doc* DocExporter::exportSheet(Context* ctx, base::task_token& token)
      createDataFile(samples, os, texture);
   }
 
-  //BEGIN BBASSO MOD
-  if (!m_btaFilename.empty()) {
-
-    std::string dir = base::get_file_path(m_btaFilename);
-    try {
-       if (!base::is_directory(dir))
-          base::make_all_directories(dir);
-    }
-    catch (const std::exception& ex) {
-       Console console;
-       console.printf("Error creating directory \"%s\"\n%s",
-          dir.c_str(), ex.what());
-    }
-
-
-    void* data;
-    size_t size;
-    Doc* doc = ctx->activeDocument();
-    ASSERT(doc);
-    Sprite* sprite = samples[0].sprite();
-    createBTAFile(samples, sprite, &data, &size);
-    ASSERT(data);
-    FILE* file = fopen(m_btaFilename.c_str(), "wb");
-    ASSERT(file);
-    size_t bytesWritten = fwrite(data, size, 1, file);
-    ASSERT(bytesWritten == size);
-    fclose(file);
-    free(data);
-
-  }
-  //END BBASSO MOD
 
   token.set_progress(0.95f);
 
@@ -758,6 +771,72 @@ Doc* DocExporter::exportSheet(Context* ctx, base::task_token& token)
       textureDocument->markAsSaved();
   }
 
+
+
+  //BEGIN BBASSO MOD
+  Samples materialLayerSamples;
+  captureAndAlignMaterialSamples(samples, materialLayerSamples, token);
+
+  if(!materialLayerSamples.empty())
+  {
+      if (!m_textureFilename.empty())
+      {
+          std::unique_ptr<Doc> materialTextureDocument(
+              createEmptyMaterialTexture(materialLayerSamples, textureImage->width(), textureImage->height()));
+
+          Sprite* materialTexture = materialTextureDocument->sprite();
+          Layer* layer = materialTexture->root()->firstLayer();
+          Image* materialTextureImage = layer->cel(frame_t(0))->image();
+
+          textureImage->clear(rgba(0, 255, 0, 255));
+
+          for (const auto& sample : materialLayerSamples)
+          {
+              sample.renderMaterialSample(
+                  materialTextureImage,
+                  sample.inTextureBounds().x + m_innerPadding,
+                  sample.inTextureBounds().y + m_innerPadding,
+                  m_extrude);
+          }
+
+
+          std::string dir = base::get_canonical_path(base::join_path(base::get_file_path(m_textureFilename), "../MaterialSprites/"));
+          std::string fullPath = base::join_path(dir, base::get_file_name(m_textureFilename));
+          materialTextureDocument->setFilename(fullPath.c_str());
+          int ret = save_document(ctx, materialTextureDocument.get());
+          if (ret == 0)
+              materialTextureDocument->markAsSaved();
+      }
+      
+  }
+  if (!m_btaFilename.empty()) {
+
+      std::string dir = base::get_file_path(m_btaFilename);
+      try {
+          if (!base::is_directory(dir))
+              base::make_all_directories(dir);
+      }
+      catch (const std::exception& ex) {
+          Console console;
+          console.printf("Error creating directory \"%s\"\n%s",
+              dir.c_str(), ex.what());
+      }
+
+
+      void* data;
+      size_t size;
+      Sprite* sprite = samples[0].sprite();
+      createBTAFile(samples, sprite, &data, &size);
+      ASSERT(data);
+      FILE* file = fopen(m_btaFilename.c_str(), "wb");
+      ASSERT(file);
+      size_t bytesWritten = fwrite(data, size, 1, file);
+      ASSERT(bytesWritten == size);
+      fclose(file);
+      free(data);
+
+  }
+  //END BBASSO MOD
   token.set_progress(1.0f);
 
   return textureDocument.release();
@@ -880,6 +959,116 @@ int DocExporter::addDocumentSamples(
   return std::max(1, items);
 }
 
+void DocExporter::captureMaterialSample(Sprite* sprite, Doc* doc, const Sample& sample, Samples& materialSamples, const LayerList& allLayers, int albedoLayerIndex, BlendMode blendModeIdentifier)
+{
+    int numLayers = allLayers.size();
+
+    for (int i = albedoLayerIndex + 1; i < numLayers; ++i)
+    {
+        Layer* layer = allLayers[i];
+        if (!layer->isImage() || !layer->isVisible())
+        {
+            continue;
+        }
+        
+        LayerImage* layerImage = static_cast<LayerImage*>(layer);
+        BlendMode blendMode = layerImage->blendMode();
+        if (blendMode == BlendMode::NORMAL)
+        {
+            //we found another normal albedo layer. There must be no corresponding depth layer 
+            return;
+        }
+        if (blendMode == blendModeIdentifier)
+        {
+            Layer* matLayer = allLayers[i];
+            //capture sample
+            SelectedLayers oneLayer;
+            oneLayer.insert(matLayer);
+            Sample matSample(
+                doc, sprite, new SelectedLayers(oneLayer), sample.frame(), sample.tag(), //MEMORY LEAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                sample.filename(), m_innerPadding, m_extrude);
+
+            matSample.setTrimmedBounds(sample.trimmedBounds());
+            matSample.setInTextureBounds(sample.inTextureBounds());
+            materialSamples.addSample(matSample);
+            break;
+        }
+    }
+}
+
+void DocExporter::captureDepthSampleForAdditive(Sprite* sprite, Doc* doc, const Sample& additiveSample, Samples& materialSamples, const LayerList& allLayers, int additiveLayerIndex)
+{
+    for (int i = additiveLayerIndex; i >= 0; --i)
+    {
+        Layer* layer = allLayers[i];
+        if (!layer->isImage() || !layer->isVisible())
+        {
+            continue;
+        }
+
+        LayerImage* layerImage = static_cast<LayerImage*>(layer);
+        BlendMode blendMode = layerImage->blendMode();
+        if (blendMode == BlendMode::DEPTH)
+        {
+            Layer* depthLayer = allLayers[i];
+            //capture sample
+            SelectedLayers oneLayer;
+            oneLayer.insert(depthLayer);
+            Sample matSample(
+                doc, sprite, new SelectedLayers(oneLayer), additiveSample.frame(), additiveSample.tag(), //MEMORY LEAK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                additiveSample.filename(), m_innerPadding, m_extrude);
+
+            matSample.setTrimmedBounds(additiveSample.trimmedBounds());
+            matSample.setInTextureBounds(additiveSample.inTextureBounds());
+            materialSamples.addSample(matSample);
+            break;
+        }
+    }
+}
+
+
+void DocExporter::captureAndAlignMaterialSamples(const Samples& albedoSamples, Samples& materialSamples, base::task_token& token)
+{
+    Sprite* sprite = albedoSamples[0].sprite();
+    Doc* doc = albedoSamples[0].document();
+    std::unordered_map<Layer*, int> layerIndexMap;
+    for (int i = 0; i < sprite->allLayersCount(); ++i)
+    {
+        layerIndexMap[sprite->allLayers()[i]] = i;
+    }
+
+    LayerList allLayers = sprite->allLayers();
+
+    bool materialLayerFound = false;
+    int numLayers = sprite->allLayersCount();
+    for (const Sample& sample : albedoSamples)
+    {
+        if (sample.isDuplicated() || sample.isLinked() || sample.isEmpty())
+        {
+            continue;
+        }
+        Layer* sampleLayer = sample.layer();
+        if (!sampleLayer->isImage())
+        {
+            continue;
+        }
+        //find corresponding material layer
+        LayerImage* layerImage = static_cast<LayerImage*>(sampleLayer);
+        BlendMode sampleLayerBlendMode = layerImage->blendMode();
+        if (sampleLayerBlendMode == BlendMode::NORMAL)
+        {
+            int albedoLayerIndex = layerIndexMap[sampleLayer];
+            captureMaterialSample(sprite, doc, sample, materialSamples, allLayers, albedoLayerIndex, BlendMode::DEPTH);
+            captureMaterialSample(sprite, doc, sample, materialSamples, allLayers, albedoLayerIndex, BlendMode::SMOOTHNESS);
+        }
+        else if (sampleLayerBlendMode == BlendMode::ADDITION)
+        {
+            int additiveLayerIndex = layerIndexMap[sampleLayer];
+            captureDepthSampleForAdditive(sprite, doc, sample, materialSamples, allLayers, additiveLayerIndex);
+        }
+    }
+}
+
 void DocExporter::captureSamples(Samples& samples,
                                  base::task_token& token)
 {
@@ -963,6 +1152,15 @@ void DocExporter::captureSamples(Samples& samples,
         cel = layer->cel(frame);
         if (cel)
           link = cel->link();
+      }
+
+      if (layer->isImage())
+      {
+          LayerImage* layerImg = static_cast<LayerImage*>(layer);
+          if (layerImg->blendMode() == BlendMode::DEPTH || layerImg->blendMode() == BlendMode::SMOOTHNESS)
+          {
+              continue;
+          }
       }
 
       // Re-use linked samples
@@ -1139,6 +1337,31 @@ gfx::Size DocExporter::calculateSheetSize(const Samples& samples,
                    fullTextureBounds.y+fullTextureBounds.h);
 }
 
+Doc* DocExporter::createEmptyMaterialTexture(const Samples& samples, int width, int height) const
+{
+    int maxColors = 256;
+    gfx::ColorSpacePtr colorSpace = samples[0].sprite()->colorSpace();
+    color_t transparentColor = rgba(0, 255, 0, 255);
+
+
+    std::unique_ptr<Sprite> sprite(
+        Sprite::MakeStdSprite(
+            ImageSpec(ColorMode::RGB,
+                width,
+                height,
+                transparentColor,
+                (colorSpace ? colorSpace : gfx::ColorSpace::MakeNone())),
+            maxColors,
+            m_docBuf));
+
+    std::unique_ptr<Doc> document(new Doc(sprite.get()));
+    sprite->setTransparentColor(transparentColor);
+    sprite.release();
+
+    return document.release();
+}
+
+
 Doc* DocExporter::createEmptyTexture(const Samples& samples,
                                      base::task_token& token) const
 {
@@ -1290,8 +1513,6 @@ void DocExporter::createBTAFile(const Samples& samples, const doc::Sprite* sprit
 
    std::vector<Image*> images;
    sprite->getImages(images);
-
-
 
 
    int numImages = images.size();

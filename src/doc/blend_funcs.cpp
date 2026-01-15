@@ -522,6 +522,26 @@ color_t rgba_blender_divide(color_t backdrop, color_t src, int opacity)
   src = rgba(r, g, b, 0) | (src & rgba_a_mask);
   return rgba_blender_normal(backdrop, src, opacity);
 }
+//BEGIN BBASSO MOD
+color_t rgba_blender_depth(color_t backdrop, color_t src, int opacity)
+{
+    int r = rgba_getr(src);
+    int g = rgba_getg(backdrop);
+    int b = rgba_getb(backdrop);
+    int a = rgba_geta(backdrop);
+    return rgba(r, g, b, a);
+}
+
+color_t rgba_blender_smoothness(color_t backdrop, color_t src, int opacity)
+{
+    int r = rgba_getr(backdrop);
+    int g = rgba_getg(src);
+    int b = rgba_getb(backdrop);
+    int a = rgba_geta(backdrop);
+    return rgba(r, g, b, a);
+}
+//END BBASSO MOD
+
 
 // New Blender Methods:
 RGBA_BLENDER_N(multiply)
@@ -542,6 +562,10 @@ RGBA_BLENDER_N(hsl_luminosity)
 RGBA_BLENDER_N(addition)
 RGBA_BLENDER_N(subtract)
 RGBA_BLENDER_N(divide)
+//BEGIN BBASSO MOD
+RGBA_BLENDER_N(depth)
+RGBA_BLENDER_N(smoothness)
+//END BBASSO MOD
 
 //////////////////////////////////////////////////////////////////////
 // GRAY blenders
@@ -786,6 +810,10 @@ BlendFunc get_rgba_blender(BlendMode blendmode, const bool newBlend)
     case BlendMode::ADDITION:       return newBlend? rgba_blender_addition_n: rgba_blender_addition;
     case BlendMode::SUBTRACT:       return newBlend? rgba_blender_subtract_n: rgba_blender_subtract;
     case BlendMode::DIVIDE:         return newBlend? rgba_blender_divide_n: rgba_blender_divide;
+//BEGIN BBASSO MOD
+    case BlendMode::DEPTH:          return newBlend ? rgba_blender_depth_n : rgba_blender_depth;
+    case BlendMode::SMOOTHNESS:     return newBlend ? rgba_blender_smoothness_n : rgba_blender_smoothness;
+//END BBASSO MOD
   }
   ASSERT(false);
   return rgba_blender_src;

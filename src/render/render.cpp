@@ -769,6 +769,29 @@ void Render::renderSprite(
   }
 }
 
+//BEGIN BBASSO MOD
+void Render::renderMaterialSprite(
+    Image* dstImage,
+    const Sprite* sprite,
+    frame_t frame,
+    const gfx::ClipF& area)
+{
+    m_sprite = sprite;
+
+    CompositeImageFunc compositeImage =
+        getImageComposition(
+            dstImage->pixelFormat(),
+            m_sprite->pixelFormat(), sprite->root());
+    if (!compositeImage)
+        return;
+
+
+    renderSpriteLayers(dstImage, area, frame, compositeImage);
+
+}
+//END BBASSO MOD
+
+
 void Render::renderSpriteLayers(Image* dstImage,
                               const gfx::ClipF& area,
                               frame_t frame,

@@ -116,6 +116,15 @@ namespace render {
       frame_t frame,
       const gfx::ClipF& area);
 
+    //BEGIN BBASSO MOD
+    void renderMaterialSprite(
+        Image* dstImage,
+        const Sprite* sprite,
+        frame_t frame,
+        const gfx::ClipF& area);
+    //END BBASSO MOD
+
+
     // Extra functions
     void renderCheckedBackground(
       Image* image,
