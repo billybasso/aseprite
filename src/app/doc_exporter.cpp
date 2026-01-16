@@ -1048,7 +1048,7 @@ void DocExporter::captureAndAlignMaterialSamples(const Samples& albedoSamples, S
             continue;
         }
         Layer* sampleLayer = sample.layer();
-        if (!sampleLayer->isImage())
+        if (!sampleLayer || !sampleLayer->isImage())
         {
             continue;
         }
@@ -1155,7 +1155,7 @@ void DocExporter::captureSamples(Samples& samples,
       }
 
 //BEGIN BBASSO MOD
-      if (layer->isImage())
+      if (layer && layer->isImage())
       {
           LayerImage* layerImg = static_cast<LayerImage*>(layer);
           if (layerImg->blendMode() == BlendMode::DEPTH || layerImg->blendMode() == BlendMode::ROUGHNESS)
