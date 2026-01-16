@@ -44,7 +44,7 @@ namespace doc {
     DIVIDE          = 18,
     //BEGIN BBASSO MOD
     DEPTH           = 19,
-    SMOOTHNESS      = 20,
+    ROUGHNESS       = 20,
     //END BBASSO MOD
   };
 

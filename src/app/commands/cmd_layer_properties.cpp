@@ -101,7 +101,7 @@ public:
 //BEGIN BBASSO MOD
     mode()->addItem(new SeparatorInView);
     mode()->addItem(new BlendModeItem("Depth", doc::BlendMode::DEPTH));
-    mode()->addItem(new BlendModeItem("Smoothness", doc::BlendMode::SMOOTHNESS));
+    mode()->addItem(new BlendModeItem("Roughness", doc::BlendMode::ROUGHNESS));
 //END BBASSO MOD
     name()->Change.connect(base::Bind<void>(&LayerPropertiesWindow::onStartTimer, this));
     mode()->Change.connect(base::Bind<void>(&LayerPropertiesWindow::onStartTimer, this));

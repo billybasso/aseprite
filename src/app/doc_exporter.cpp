@@ -1059,7 +1059,7 @@ void DocExporter::captureAndAlignMaterialSamples(const Samples& albedoSamples, S
         {
             int albedoLayerIndex = layerIndexMap[sampleLayer];
             captureMaterialSample(sprite, doc, sample, materialSamples, allLayers, albedoLayerIndex, BlendMode::DEPTH);
-            captureMaterialSample(sprite, doc, sample, materialSamples, allLayers, albedoLayerIndex, BlendMode::SMOOTHNESS);
+            captureMaterialSample(sprite, doc, sample, materialSamples, allLayers, albedoLayerIndex, BlendMode::ROUGHNESS);
         }
         else if (sampleLayerBlendMode == BlendMode::ADDITION)
         {
@@ -1154,14 +1154,16 @@ void DocExporter::captureSamples(Samples& samples,
           link = cel->link();
       }
 
+//BEGIN BBASSO MOD
       if (layer->isImage())
       {
           LayerImage* layerImg = static_cast<LayerImage*>(layer);
-          if (layerImg->blendMode() == BlendMode::DEPTH || layerImg->blendMode() == BlendMode::SMOOTHNESS)
+          if (layerImg->blendMode() == BlendMode::DEPTH || layerImg->blendMode() == BlendMode::ROUGHNESS)
           {
               continue;
           }
       }
+//END BBASSO MOD
 
       // Re-use linked samples
       if (link && m_mergeDuplicates) {

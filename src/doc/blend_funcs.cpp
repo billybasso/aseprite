@@ -525,14 +525,15 @@ color_t rgba_blender_divide(color_t backdrop, color_t src, int opacity)
 //BEGIN BBASSO MOD
 color_t rgba_blender_depth(color_t backdrop, color_t src, int opacity)
 {
-    int r = rgba_getr(src);
+    int t;
+    int r = MUL_UN8(rgba_getr(src), rgba_geta(src),t);
     int g = rgba_getg(backdrop);
     int b = rgba_getb(backdrop);
     int a = rgba_geta(backdrop);
     return rgba(r, g, b, a);
 }
 
-color_t rgba_blender_smoothness(color_t backdrop, color_t src, int opacity)
+color_t rgba_blender_roughness(color_t backdrop, color_t src, int opacity)
 {
     int r = rgba_getr(backdrop);
     int g = rgba_getg(src);
@@ -564,7 +565,7 @@ RGBA_BLENDER_N(subtract)
 RGBA_BLENDER_N(divide)
 //BEGIN BBASSO MOD
 RGBA_BLENDER_N(depth)
-RGBA_BLENDER_N(smoothness)
+RGBA_BLENDER_N(roughness)
 //END BBASSO MOD
 
 //////////////////////////////////////////////////////////////////////
@@ -812,7 +813,7 @@ BlendFunc get_rgba_blender(BlendMode blendmode, const bool newBlend)
     case BlendMode::DIVIDE:         return newBlend? rgba_blender_divide_n: rgba_blender_divide;
 //BEGIN BBASSO MOD
     case BlendMode::DEPTH:          return newBlend ? rgba_blender_depth_n : rgba_blender_depth;
-    case BlendMode::SMOOTHNESS:     return newBlend ? rgba_blender_smoothness_n : rgba_blender_smoothness;
+    case BlendMode::ROUGHNESS:     return newBlend ? rgba_blender_roughness_n : rgba_blender_roughness;
 //END BBASSO MOD
   }
   ASSERT(false);

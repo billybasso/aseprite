@@ -36,7 +36,7 @@ std::string blend_mode_to_string(BlendMode blendMode)
     case BlendMode::DIVIDE: return "divide";
 //BEGIN BBASSO MOD
     case BlendMode::DEPTH: return "depth";
-    case BlendMode::SMOOTHNESS: return "smoothness";
+    case BlendMode::ROUGHNESS: return "roughness";
 //END BBASSO MOD
     default: return "unknown";
   }
